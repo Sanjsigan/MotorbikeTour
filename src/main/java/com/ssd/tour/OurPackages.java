@@ -14,11 +14,12 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import com.ssd.tour.model.Car;
+
+import com.ssd.tour.model.Packages;
 import com.google.gson.Gson;
 
-@Path("cars")
-public class CarResourse {
+@Path("pvmst")
+public class OurPackages {
 	
 	
 //	@GET
@@ -34,10 +35,10 @@ public class CarResourse {
 		//Jackson
 		//GSON
 		
-		List<Car> cars = getCarsFromDB();
+		List<Packages> packages = getCarsFromDB();
 		
 		Gson gson = new Gson();
-		String jsonString = gson.toJson(cars);
+		String jsonString = gson.toJson(packages);
 		
 		return Response
 				.status(200)
@@ -49,14 +50,14 @@ public class CarResourse {
 	@GET
 	@Path("{id}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response getACar(@PathParam("id") String id) {
+	public Response getApackage(@PathParam("id") String id) {
 		
 		int carid = Integer.parseInt(id);
 		
-		Car car = getACarFromDB(carid);
+		Packages packages = getAPackageFromDB(carid);
 		
 		Gson gson = new Gson();
-		String jsonString = gson.toJson(car);
+		String jsonString = gson.toJson(packages);
 		
 		return Response
 				.status(200)
@@ -66,32 +67,32 @@ public class CarResourse {
 	}
 	
 	//Fetching data from database.
-	public List<Car> getCarsFromDB(){
-		List<Car> carList = new ArrayList<Car>();
+	public List<Packages> getCarsFromDB(){
+		List<Packages> pacList = new ArrayList<Packages>();
 		
-		String connURL = "jdbc:mysql://localhost:3306/cardb";
+		String connURL = "jdbc:mysql://localhost:3306/pvmstbooking";
 		
 		try {
 			
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection conn = DriverManager.getConnection(connURL, "root", "sanjsi");
 			
-			String sql = "SELECT * FROM car";//Query to be execute
+			String sql = "SELECT * FROM package";//Query to be execute
 			PreparedStatement preparedStatement = conn.prepareStatement(sql);
 			
 			ResultSet resultSet = preparedStatement.executeQuery(); //Query execution.
 			
 			while(resultSet.next()) {
-				Car car = new Car();
+				Packages packages = new Packages();
 				
-				car.setId(resultSet.getInt("id"));
-				car.setModel(resultSet.getString("model"));
-				car.setBrand(resultSet.getString("brand"));
-				car.setYear(resultSet.getInt("year"));
-				car.setColor(resultSet.getString("color"));
-				car.setType(resultSet.getString("type"));
+				packages.setId(resultSet.getInt("package_id"));
+				packages.setPacName(resultSet.getString("pakage_name"));
+				packages.setType(resultSet.getString("package_type"));
+				packages.setAmount(resultSet.getInt("package_amount"));
+				packages.setDesc(resultSet.getString("package_desc"));
 				
-				carList.add(car);
+				
+				pacList.add(packages);
 			}
 			
 		} catch (Exception e) {
@@ -99,22 +100,22 @@ public class CarResourse {
 			System.out.println("Error : "+e.getMessage());
 		}
 		
-		return carList;
+		return pacList;
 		
 	}
 	
 	//Fetching a single data from database.
-	public Car getACarFromDB(int id){
-		Car car = new Car();
+	public Packages getAPackageFromDB(int id){
+		Packages packages = new Packages();
 		
-		String connURL = "jdbc:mysql://localhost:3306/cardb";
+		String connURL = "jdbc:mysql://localhost:3306/pvmstbooking";
 		
 		try {
 			
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection conn = DriverManager.getConnection(connURL, "root", "sanjsi");
 			
-			String sql = "SELECT * FROM car WHERE id = ?";//Query to be execute
+			String sql = "SELECT * FROM package WHERE id = ?";//Query to be execute
 			PreparedStatement preparedStatement = conn.prepareStatement(sql);
 			preparedStatement.setInt(1, id); //binding the parameter value, 1 is for specify first parameter.
 			
@@ -122,12 +123,11 @@ public class CarResourse {
 			
 			while(resultSet.next()) {
 				
-				car.setId(resultSet.getInt("id"));
-				car.setModel(resultSet.getString("model"));
-				car.setBrand(resultSet.getString("brand"));
-				car.setYear(resultSet.getInt("year"));
-				car.setColor(resultSet.getString("color"));
-				car.setType(resultSet.getString("type"));
+				packages.setId(resultSet.getInt("package_id"));
+				packages.setPacName(resultSet.getString("pakage_name"));
+				packages.setType(resultSet.getString("package_type"));
+				packages.setAmount(resultSet.getInt("package_amount"));
+				packages.setDesc(resultSet.getString("package_desc"));
 				
 			}
 			
@@ -136,7 +136,7 @@ public class CarResourse {
 			System.out.println("Error : "+e.getMessage());
 		}
 		
-		return car;
+		return packages;
 		
 	}
 		

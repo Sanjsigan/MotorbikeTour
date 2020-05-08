@@ -214,14 +214,14 @@
 		<tbody>
 
 			<th scope="row">ID</th>
-			<th scope="row">Model</th>
-			<th scope="row">Brand</th>
-			<th scope="row">Year</th>
-			<th scope="row">Color</th>
+			<th scope="row">Name</th>
 			<th scope="row">Type</th>
+			<th scope="row">Amount</th>
+			<th scope="row">Desc</th>
+
 
 <% 
-   			  	final String API_URL = "http://localhost:8080/tour/carapi/cars";
+   			  	final String API_URL = "http://localhost:8080/tour/pvmstapi/pvmst";
    			
    				//Fetching data from API.
    				try{
@@ -255,12 +255,12 @@
 							
 							%>
 								<tr >
-									<td class="table-secondary"><% out.print(obj.get("id").getAsString()); %></td>
-									<td class="table-success"><% out.print(obj.get("model").getAsString()); %></td>
-									<td class="table-danger"><% out.print(obj.get("brand").getAsString()); %></td>
-									<td class="table-warning"><% out.print(obj.get("year").getAsString()); %></td>
-									<td class="table-info"><% out.print(obj.get("color").getAsString()); %></td>
-									<td class="table-dark"><% out.print(obj.get("type").getAsString()); %></td>
+									<td class="table-secondary"><% out.print(obj.get("package_id").getAsString()); %></td>
+									<td class="table-success"><% out.print(obj.get("pakage_name").getAsString()); %></td>
+									<td class="table-danger"><% out.print(obj.get("package_type").getAsString()); %></td>
+									<td class="table-warning"><% out.print(obj.get("package_amount").getAsString()); %></td>
+									<td class="table-info"><% out.print(obj.get("package_desc").getAsString()); %></td>
+								
 								</tr>
 							<% 
 						}
