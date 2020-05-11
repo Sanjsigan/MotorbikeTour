@@ -176,9 +176,7 @@
                     <span class="mr-2 d-none d-lg-inline text-gray-600 small">SignUp</span>
                     <i class="fas fa-user-plus"></i>
                     </a>
-
-            </li>
-
+                         </li>
 
                             <div class="topbar-divider d-none d-sm-block"></div>
 
@@ -212,7 +210,7 @@
                 <!-- End of Topbar -->
 
 	
-
+           
                 <!-- Footer -->
 
                 <!-- End of Footer -->
