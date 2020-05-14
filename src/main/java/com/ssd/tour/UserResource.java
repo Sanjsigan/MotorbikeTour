@@ -1,5 +1,7 @@
 package com.ssd.tour;
 
-public class UserResource {
 
+public class UserResource {
+	
+	
 }
