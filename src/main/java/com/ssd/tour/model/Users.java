@@ -6,18 +6,20 @@ public class Users {
 	private String address;
 	private int mobile;
 	private String mail;
+	private String password;
 	
 	public Users () {
 		super();
 	}
 	
-	public Users(int id, String name, String address, int mobile, String mail) {
+	public Users(int id, String name, String address, int mobile, String mail, String password) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.address = address;
 		this.mobile = mobile;
 		this.mail = mail;
+		this.password=password;
 	}
 
 	public int getId() {
@@ -60,6 +62,13 @@ public class Users {
 		this.mail = mail;
 	}
 	
+	public String getPassword() {
+		return mail;
+	}
+
+	public void setPasword(String password) {
+		this.password = password;
+	}
 	
 
 }

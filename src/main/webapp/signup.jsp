@@ -319,22 +319,22 @@
 		<p class="hint-text">Sign up with your social media account or email address</p>
 	
         <div class="form-group">
-        	<input type="text" class="form-control input-lg" name="username" placeholder="Username" required="required">
+        	<input type="text" class="form-control input-lg" name="user_id" placeholder="Username" required="required">
         </div>
         	<div class="form-group">
-        	<input type="text" class="form-control input-lg" name="address" placeholder="Current Address" required="required">
+        	<input type="text" class="form-control input-lg" name="user_name" placeholder="Current Address" required="required">
         </div>
 		<div class="form-group">
-        	<input type="email" class="form-control input-lg" name="email" placeholder="Email Address" required="required">
+        	<input type="email" class="form-control input-lg" name="user_address" placeholder="Email Address" required="required">
         </div>
         <div class="form-group">
-        	<input type="text" class="form-control input-lg" name="mobile" placeholder="Mobile Number" required="required">
+        	<input type="text" class="form-control input-lg" name="user_mobile" placeholder="Mobile Number" required="required">
         </div>
 		<div class="form-group">
-            <input type="password" class="form-control input-lg" name="password" placeholder="Password" required="required">
+            <input type="password" class="form-control input-lg" name="user_email" placeholder="Password" required="required">
         </div>
 		<div class="form-group">
-            <input type="password" class="form-control input-lg" name="confirm_password" placeholder="Confirm Password" required="required">
+            <input type="password" class="form-control input-lg" name="password" placeholder="Confirm Password" required="required">
         </div>  
         <div class="form-group">
             <button type="submit" class="btn btn-success btn-lg btn-block signup-btn">Sign Up</button>
