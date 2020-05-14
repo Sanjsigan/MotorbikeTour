@@ -319,25 +319,25 @@
 		<p class="hint-text">Sign up with your social media account or email address</p>
 	
         <div class="form-group">
-        	<input type="text" class="form-control input-lg" name="user_id" placeholder="Username" required="required">
+        	<input type="text" class="form-control input-lg" name="user_id" placeholder="UserId" required="required">
         </div>
         	<div class="form-group">
-        	<input type="text" class="form-control input-lg" name="user_name" placeholder="Current Address" required="required">
+        	<input type="text" class="form-control input-lg" name="user_name" placeholder="userName" required="required">
         </div>
 		<div class="form-group">
-        	<input type="email" class="form-control input-lg" name="user_address" placeholder="Email Address" required="required">
+        	<input type="text" class="form-control input-lg" name="user_address" placeholder="Address" required="required">
         </div>
         <div class="form-group">
         	<input type="text" class="form-control input-lg" name="user_mobile" placeholder="Mobile Number" required="required">
         </div>
 		<div class="form-group">
-            <input type="password" class="form-control input-lg" name="user_email" placeholder="Password" required="required">
+            <input type="text" class="form-control input-lg" name="user_email" placeholder="Mail" required="required">
         </div>
 		<div class="form-group">
-            <input type="password" class="form-control input-lg" name="password" placeholder="Confirm Password" required="required">
+            <input type="text" class="form-control input-lg" name="password" placeholder=" Password" required="required">
         </div>  
         <div class="form-group">
-            <button type="submit" class="btn btn-success btn-lg btn-block signup-btn">Sign Up</button>
+          <input type="submit" value="Submit">
         </div>
     </form>
     <div class="text-center">Already have an account? <a href="#">Login here</a></div>

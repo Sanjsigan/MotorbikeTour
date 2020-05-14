@@ -32,7 +32,7 @@ public class UserDao {
 				
 				Connection conn = Configs.getDbConnection();
 				
-				String sql = "SELECT * FROM user";//Query to be execute
+				String sql = "SELECT * FROM signup";//Query to be execute
 				PreparedStatement preparedStatement = conn.prepareStatement(sql);
 				
 				ResultSet resultSet = preparedStatement.executeQuery(); //Query execution.
@@ -45,6 +45,7 @@ public class UserDao {
 					user.setAddress(resultSet.getString("user_address"));
 					user.setMobile(resultSet.getInt("user_mobile"));
 					user.setMail(resultSet.getString("user_email"));
+					user.setPasword(resultSet.getString("password"));
 					
 					
 					carList.add(user);
@@ -106,15 +107,15 @@ public class UserDao {
 			if(user != null) {
 				
 				Connection connection = Configs.getDbConnection();
-				String sql = "INSERT INTO `user` (`user_id`,`user_name`, `user_address`, `user_mobile`, `user_email`,`password`) " + 
-							"VALUES (?,?,?,?,?)";
+				String sql = "INSERT INTO `signup` (`user_id`,`user_name`, `user_address`, `user_mobile`, `user_email`,`password`) " + 
+							"VALUES (?,?,?,?,?,?)";
 				PreparedStatement stmt = connection.prepareStatement(sql);
 				stmt.setInt(1, user.getId());
 				stmt.setString(2, user.getName());
 				stmt.setString(3, user.getAddress());
 				stmt.setInt(4, user.getMobile());
 				stmt.setString(5, user.getMail());
-				stmt.setString(5, user.getPassword());
+				stmt.setString(6, user.getPassword());
 				
 				int count = stmt.executeUpdate();
 				

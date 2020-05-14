@@ -78,11 +78,13 @@ public class UserResource {
 		
 		@POST
 		@Produces(MediaType.APPLICATION_JSON)
-		public void addCar(@FormParam("user_id") int id,
+		public void adduser(@FormParam("user_id") int id,
 								@FormParam("user_name") String name,
 								@FormParam("user_address") String address,
 								@FormParam("user_mobile") int mobile,
-								@FormParam("user_email") String email) throws ClassNotFoundException, SQLException {
+								@FormParam("user_email") String email,
+								@FormParam("password") String password)
+										throws ClassNotFoundException, SQLException {
 			
 			Users user= new Users();
 			
@@ -91,6 +93,7 @@ public class UserResource {
 			user.setAddress(address);
 			user.setMobile(mobile);
 			user.setMail(email);
+			user.setMail(password);
 			
 			//boolean result = CarDao.getInstance().add(car);
 		
