@@ -14,6 +14,8 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import com.google.gson.Gson;
+import com.ssd.tour.dao.UserDao;
+import com.ssd.tour.model.Users;
 
 public class UserResource {
 	
@@ -28,14 +30,14 @@ public class UserResource {
 			//GSON
 			
 			
-			Object object = CarDao.getInstance().getAll();
+			Object object = UserDao.getInstance().getAll();
 			
 			Gson gson = new Gson();
 			
 			if(object instanceof List<?>) { //Data type  checking.
 				
 				@SuppressWarnings("unchecked")
-				List<Car> cars = (List<Car>)object; //Casting.
+				List<Users> cars = (List<Users>)object; //Casting.
 				
 				String jsonString = gson.toJson(cars);
 				return Response
@@ -58,14 +60,14 @@ public class UserResource {
 		@GET
 		@Path("{id}")
 		@Produces(MediaType.APPLICATION_JSON)
-		public Response getACar(@PathParam("id") String id) {
+		public Response getAUser(@PathParam("id") String id) {
 			
 			int carid = Integer.parseInt(id);
 			
-			Car car = CarDao.getInstance().get(carid);
+			Users user = UserDao.getInstance().get(carid);
 			
 			Gson gson = new Gson();
-			String jsonString = gson.toJson(car);
+			String jsonString = gson.toJson(user);
 			
 			return Response
 					.status(200)
@@ -76,22 +78,23 @@ public class UserResource {
 		
 		@POST
 		@Produces(MediaType.APPLICATION_JSON)
-		public void addCar(@FormParam("model") String model,
-								@FormParam("brand") String brand,
-								@FormParam("year") int year,
-								@FormParam("color") String color,
-								@FormParam("type") String type) throws ClassNotFoundException, SQLException {
+		public void addCar(@FormParam("user_id") int id,
+								@FormParam("user_name") String name,
+								@FormParam("user_address") String address,
+								@FormParam("user_mobile") int mobile,
+								@FormParam("user_email") String email) throws ClassNotFoundException, SQLException {
 			
-			Car car= new Car();
+			Users user= new Users();
 			
-			car.setModel(model);
-			car.setBrand(brand);
-			car.setYear(year);
-			car.setColor(color);
-			car.setType(type);
+			user.setId(id);
+			user.setName(name);
+			user.setAddress(address);
+			user.setMobile(mobile);
+			user.setMail(email);
 			
 			//boolean result = CarDao.getInstance().add(car);
 		
 		}
 
+	}
 }
