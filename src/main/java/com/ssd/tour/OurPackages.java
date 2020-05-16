@@ -4,8 +4,10 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
@@ -16,7 +18,10 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import com.ssd.tour.dao.PackageDao;
+import com.ssd.tour.dao.UserDao;
 import com.ssd.tour.model.Packages;
+import com.ssd.tour.model.Users;
 import com.google.gson.Gson;
 
 @Path("pvmst")
@@ -25,105 +30,75 @@ public class OurPackages {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getAll() {
-		// Jackson
-		// GSON
-
-		List<Packages> packages = getpackFromDb();
-
+		//Jackson
+		//GSON
+		Object object = PackageDao.getInstance().getAll();
+		
 		Gson gson = new Gson();
-		String jsonString = gson.toJson(packages);
-
-		return Response.status(200).entity(jsonString).build();
-
+		
+		if(object instanceof List<?>) { //Data type  checking.
+			
+			@SuppressWarnings("unchecked")
+			List<Packages> packages = (List<Packages>)object; //Casting.
+			
+			String jsonString = gson.toJson(packages);
+			return Response
+					.status(200)
+					.entity(jsonString)
+					.build();
+		} else {
+			@SuppressWarnings("unchecked")
+			Map<String, String> errMsg = (Map<String, String>)object; //Casting.
+			
+			String jsonString = gson.toJson(errMsg);
+			return Response
+					.status(200)
+					.entity(jsonString)
+					.build();
+		}
+		
 	}
-
+	
 	@GET
 	@Path("{id}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response getApac(@PathParam("id") String id) {
-
+	public Response getAPackage(@PathParam("id") String id) {
+		
 		int pacid = Integer.parseInt(id);
-
-		Packages packages = getpackFromDb(pacid);
-
+		
+		Packages packages = PackageDao.getInstance().get(pacid);
+		
 		Gson gson = new Gson();
 		String jsonString = gson.toJson(packages);
-
-		return Response.status(200).entity(jsonString).build();
-
+		
+		return Response
+				.status(200)
+				.entity(jsonString)
+				.build();
+		
 	}
-
-	// Fetching data from database.
-	public List<Packages> getpackFromDb() {
-		List<Packages> pacList = new ArrayList<Packages>();
-
-		String connURL = "jdbc:mysql://localhost:3306/pvmst";
-
-		try {
-
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection conn = DriverManager.getConnection(connURL, "root", "sanjsi");
-
-			String sql = "SELECT * FROM package";// Query to be execute
-			PreparedStatement preparedStatement = conn.prepareStatement(sql);
-
-			ResultSet resultSet = preparedStatement.executeQuery(); // Query execution.
-
-			while (resultSet.next()) {
-				Packages packages = new Packages();
-
-				packages.setId(resultSet.getInt("package_id"));
-				packages.setPacName(resultSet.getString("package_name"));
-				packages.setType(resultSet.getString("package_type"));
-				packages.setAmount(resultSet.getInt("package_amount"));
-				packages.setDesc(resultSet.getString("package_desc"));
-
-				pacList.add(packages);
-			}
-
-		} catch (Exception e) {
-			e.printStackTrace();
-			System.out.println("Error : " + e.getMessage());
-		}
-
-		return pacList;
-
-	}
-
-	// Fetching a single data from database.
-	public Packages getpackFromDb(int id) {
-		Packages packages = new Packages();
-
-		String connURL = "jdbc:mysql://localhost:3306/pvmst";
-
-		try {
-
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection conn = DriverManager.getConnection(connURL, "root", "sanjsi");
-
-			String sql = "SELECT * FROM package WHERE package_id = ?";// Query to be execute
-			PreparedStatement preparedStatement = conn.prepareStatement(sql);
-			preparedStatement.setInt(1, id); // binding the parameter value, 1 is for specify first parameter.
-
-			ResultSet resultSet = preparedStatement.executeQuery(); // Query execution.
-
-			while (resultSet.next()) {
-
-				packages.setId(resultSet.getInt("package_id"));
-				packages.setPacName(resultSet.getString("package_name"));
-				packages.setType(resultSet.getString("package_type"));
-				packages.setAmount(resultSet.getInt("package_amount"));
-				packages.setDesc(resultSet.getString("package_desc"));
-
-			}
-
-		} catch (Exception e) {
-			e.printStackTrace();
-			System.out.println("Error : " + e.getMessage());
-		}
-
-		return packages;
-
+	
+	@POST
+	@Produces(MediaType.APPLICATION_JSON)
+	public void addPackage(@FormParam("package_id") int id,
+							@FormParam("package_name") String pacname,
+							@FormParam("package_type") String pactype,
+							@FormParam("package_amount") int pacamount,
+							@FormParam("package_desc") String pacdesc
+						)
+									throws ClassNotFoundException, SQLException {
+		
+		Packages packages= new Packages();
+		
+		packages.setId(id);
+		packages.setPacName(pacname);
+		packages.setType(pactype);
+		packages.setAmount(pacamount);
+		packages.setDesc(pacdesc);
+	
+		
+		//boolean result = CarDao.getInstance().add(car);
+	
 	}
 }
 
