@@ -190,7 +190,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                       
                         <a class="collapse-item" href="buttons.html">Normal Bikes</a>
-                        <a class="collapse-item" href="cards.html">Royal En Field</a>
+                     
                     </div>
                 </div>
             </li>
