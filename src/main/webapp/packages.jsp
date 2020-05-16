@@ -260,7 +260,7 @@
 							%>
 								<tr >
 									<td class="table-secondary"><% out.print(obj.get("package_id").getAsString()); %></td>
-									<td class="table-success"><% out.print(obj.get("pakage_name").getAsString()); %></td>
+									<td class="table-success"><% out.print(obj.get("package_name").getAsString()); %></td>
 									<td class="table-danger"><% out.print(obj.get("package_type").getAsString()); %></td>
 									<td class="table-warning"><% out.print(obj.get("package_amount").getAsString()); %></td>
 									<td class="table-info"><% out.print(obj.get("package_desc").getAsString()); %></td>

@@ -314,7 +314,7 @@
                 </nav>
                 <!-- End of Topbar -->
 <div class="signup-form">
-    <form action="http://localhost:8080/tour/pvmstapi/pvmst" method="post">
+    <form action="http://localhost:8080/tour/pvmstapi/user" method="post">
 		<h2>Create an Account</h2>
 		<p class="hint-text">Sign up with your social media account or email address</p>
 	

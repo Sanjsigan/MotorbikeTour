@@ -7,143 +7,127 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-
 import com.ssd.tour.model.Packages;
 import com.google.gson.Gson;
 
 @Path("pvmst")
 public class OurPackages {
-	
-	
-//	@GET
-//	@Produces(MediaType.TEXT_PLAIN)
-//	public String test() {
-//		return "Yes Working!";
-//	}
-	
-	
+
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getAll() {
-		//Jackson
-		//GSON
-		
-		List<Packages> packages = getCarsFromDB();
-		
+		// Jackson
+		// GSON
+
+		List<Packages> packages = getpackFromDb();
+
 		Gson gson = new Gson();
 		String jsonString = gson.toJson(packages);
-		
-		return Response
-				.status(200)
-				.entity(jsonString)
-				.build();
-		
+
+		return Response.status(200).entity(jsonString).build();
+
 	}
-	
+
 	@GET
 	@Path("{id}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response getApackage(@PathParam("id") String id) {
-		
-		int carid = Integer.parseInt(id);
-		
-		Packages packages = getAPackageFromDB(carid);
-		
+	public Response getApac(@PathParam("id") String id) {
+
+		int pacid = Integer.parseInt(id);
+
+		Packages packages = getpackFromDb(pacid);
+
 		Gson gson = new Gson();
 		String jsonString = gson.toJson(packages);
-		
-		return Response
-				.status(200)
-				.entity(jsonString)
-				.build();
-		
+
+		return Response.status(200).entity(jsonString).build();
+
 	}
-	
-	//Fetching data from database.
-	public List<Packages> getCarsFromDB(){
+
+	// Fetching data from database.
+	public List<Packages> getpackFromDb() {
 		List<Packages> pacList = new ArrayList<Packages>();
-		
-		String connURL = "jdbc:mysql://localhost:3306/pvmstbooking";
-		
+
+		String connURL = "jdbc:mysql://localhost:3306/pvmst";
+
 		try {
-			
+
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection conn = DriverManager.getConnection(connURL, "root", "sanjsi");
-			
-			String sql = "SELECT * FROM package";//Query to be execute
+
+			String sql = "SELECT * FROM package";// Query to be execute
 			PreparedStatement preparedStatement = conn.prepareStatement(sql);
-			
-			ResultSet resultSet = preparedStatement.executeQuery(); //Query execution.
-			
-			while(resultSet.next()) {
+
+			ResultSet resultSet = preparedStatement.executeQuery(); // Query execution.
+
+			while (resultSet.next()) {
 				Packages packages = new Packages();
-				
+
 				packages.setId(resultSet.getInt("package_id"));
-				packages.setPacName(resultSet.getString("pakage_name"));
+				packages.setPacName(resultSet.getString("package_name"));
 				packages.setType(resultSet.getString("package_type"));
 				packages.setAmount(resultSet.getInt("package_amount"));
 				packages.setDesc(resultSet.getString("package_desc"));
-				
-				
+
 				pacList.add(packages);
 			}
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("Error : "+e.getMessage());
+			System.out.println("Error : " + e.getMessage());
 		}
-		
+
 		return pacList;
-		
+
 	}
-	
-	//Fetching a single data from database.
-	public Packages getAPackageFromDB(int id){
+
+	// Fetching a single data from database.
+	public Packages getpackFromDb(int id) {
 		Packages packages = new Packages();
-		
-		String connURL = "jdbc:mysql://localhost:3306/pvmstbooking";
-		
+
+		String connURL = "jdbc:mysql://localhost:3306/pvmst";
+
 		try {
-			
+
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection conn = DriverManager.getConnection(connURL, "root", "sanjsi");
-			
-			String sql = "SELECT * FROM package WHERE id = ?";//Query to be execute
+
+			String sql = "SELECT * FROM package WHERE package_id = ?";// Query to be execute
 			PreparedStatement preparedStatement = conn.prepareStatement(sql);
-			preparedStatement.setInt(1, id); //binding the parameter value, 1 is for specify first parameter.
-			
-			ResultSet resultSet = preparedStatement.executeQuery(); //Query execution.
-			
-			while(resultSet.next()) {
-				
+			preparedStatement.setInt(1, id); // binding the parameter value, 1 is for specify first parameter.
+
+			ResultSet resultSet = preparedStatement.executeQuery(); // Query execution.
+
+			while (resultSet.next()) {
+
 				packages.setId(resultSet.getInt("package_id"));
-				packages.setPacName(resultSet.getString("pakage_name"));
+				packages.setPacName(resultSet.getString("package_name"));
 				packages.setType(resultSet.getString("package_type"));
 				packages.setAmount(resultSet.getInt("package_amount"));
 				packages.setDesc(resultSet.getString("package_desc"));
-				
+
 			}
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("Error : "+e.getMessage());
+			System.out.println("Error : " + e.getMessage());
 		}
-		
+
 		return packages;
-		
+
 	}
-		
-	
-	
-		
-	//Database Simulation.
+}
+
+// Database Simulation.
 //	public List<Car> getCars(){
 //		List<Car> carList = new ArrayList<Car>();
 //		
@@ -159,8 +143,3 @@ public class OurPackages {
 //		
 //		return carList;
 //	}
-	
-	 
-	
-
-}
