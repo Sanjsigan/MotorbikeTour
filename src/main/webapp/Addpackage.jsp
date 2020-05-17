@@ -1,6 +1,14 @@
 
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+
+<%@page import="com.google.gson.JsonObject"%>
+<%@page import="com.google.gson.JsonParser"%>
+<%@page import="com.google.gson.JsonArray"%>
+<%@page import="com.google.gson.Gson"%>
+<%@page import="java.io.BufferedReader"%>
+<%@page import="java.io.InputStreamReader"%>
+<%@page import="java.io.InputStream"%>
+<%@page import="java.net.HttpURLConnection"%>
+<%@page import="java.net.URL"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +20,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SignUp</title>
+    <title>Add Package Details</title>
 
     <!-- Custom fonts for this template-->
     <link href="https://blackrockdigital.github.io/startbootstrap-sb-admin-2/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -20,116 +28,14 @@
 
     <!-- Custom styles for this template-->
     <link href="https://blackrockdigital.github.io/startbootstrap-sb-admin-2/css/sb-admin-2.min.css" rel="stylesheet">
-<style type="text/css">
-	body {
-		background: #dfe7e9;
-		font-family: 'Roboto', sans-serif;
-	}
-    .form-control {
-		font-size: 16px;
-		transition: all 0.4s;
-		box-shadow: none;
-	}
-	.form-control:focus {
-        border-color: #5cb85c;
-    }
-    .form-control, .btn {
-        border-radius: 50px;
-		outline: none !important;
-    }
-	.signup-form {
-		width: 480px;
-    	margin: 0 auto;
-		padding: 30px 0;
-	}
-    .signup-form form {
-		border-radius: 5px;
-    	margin-bottom: 20px;
-        background: #fff;
-        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-        padding: 40px;
-    }
-	.signup-form a {
-		color: #5cb85c;
-	}    
-	.signup-form h2 {
-		text-align: center;
-		font-size: 34px;
-		margin: 10px 0 15px;
-	}
-	.signup-form .hint-text {
-		color: #999;
-		text-align: center;
-		margin-bottom: 20px;
-	}
-	.signup-form .form-group {
-		margin-bottom: 20px;
-	}
-    .signup-form .btn {        
-        font-size: 18px;
-		line-height: 26px;
-        font-weight: bold;
-		text-align: center;
-    }
-	.signup-btn {
-		text-align: center;
-		border-color: #5cb85c;
-		transition: all 0.4s;
-	}
-	.signup-btn:hover {
-		background: #5cb85c;
-		opacity: 0.8;
-	}
-    .or-seperator {
-        margin: 50px 0 15px;
-        text-align: center;
-        border-top: 1px solid #e0e0e0;
-    }
-    .or-seperator b {
-        padding: 0 10px;
-		width: 40px;
-		height: 40px;
-		font-size: 16px;
-		text-align: center;
-		line-height: 40px;
-		background: #fff;
-		display: inline-block;
-        border: 1px solid #e0e0e0;
-		border-radius: 50%;
-        position: relative;
-        top: -22px;
-        z-index: 1;
-    }
-    .social-btn .btn {
-		color: #fff;
-        margin: 10px 0 0 15px;
-		font-size: 15px;
-		border-radius: 50px;
-		font-weight: normal;
-		border: none;
-		transition: all 0.4s;
-    }	
-	.social-btn .btn:first-child {
-		margin-left: 0;
-	}
-	.social-btn .btn:hover {
-		opacity: 0.8;
-	}
-	.social-btn .btn-primary {
-		background: #507cc0;
-	}
-	.social-btn .btn-info {
-		background: #64ccf1;
-	}
-	.social-btn .btn-danger {
-		background: #df4930;
-	}
-	.social-btn .btn i {
-		float: left;
-		margin: 3px 10px;
-		font-size: 20px;
-	}
-</style>
+     <link href="https://blackrockdigital.github.io/startbootstrap-sb-admin-2/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="https://colorlib.com/etc/regform/colorlib-regform-5/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="https://colorlib.com/etc/regform/colorlib-regform-5/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+     <link href="https://colorlib.com/etc/regform/colorlib-regform-5/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+     <link href="https://colorlib.com/etc/regform/colorlib-regform-5/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+     <link href="https://colorlib.com/etc/regform/colorlib-regform-5/css/main.css" rel="stylesheet" media="all">
+
 </head>
 
 <body id="page-top">
@@ -173,10 +79,11 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                       
-                      <a class="collapse-item" href="buttons.html">Update Details</a>
+                        <a class="collapse-item" href="buttons.html">Update Details</a>
                         <a class="collapse-item" href="cards.html">Delete Details</a>
                          <a class="collapse-item" href="cards.html">Add Bike Details</a>
                          <a class="collapse-item" href="cards.html">Add Package Details</a>
+                      
                     </div>
                 </div>
             </li>
@@ -185,18 +92,18 @@
                     <i class="fas fa-motorcycle"></i>
                     <span>Vechile Details</span>
                 </a>
-           
+               
             </li>
-           <li class="nav-item">
+            <li class="nav-item">
                 <a class="nav-link" href="packages.jsp">
                     <i class="far fa-address-book"></i>
                     <span>Our Tour Packages</span></a>
 
             </li>
                <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="index.html">
                     <i class="far fa-address-book"></i>
-                    <span>Hottle Details</span></a>
+                    <span>Hottles Details</span></a>
 
             </li>
             <!-- Nav Item - Utilities Collapse Menu -->
@@ -274,23 +181,19 @@
 
                         <!-- Nav Item - Alerts -->
                         <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="index.html" >
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">login</span>
                                 <i class="fas fa-users"></i>
                             </a>
                             <!-- Dropdown - Alerts -->
+                      </li>
 
-
-                            <li class="nav-item dropdown no-arrow mx-1">
-                                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">sign in</span>
-                                    <i class="fas fa-user-plus"></i>
-                                </a>
-                                <!-- Dropdown - Alerts -->
-
-                            </li>
-
-
+                         <li class="nav-item dropdown no-arrow mx-1">
+                <a class="nav-link dropdown-toggle" href="signup.jsp">
+                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">SignUp</span>
+                    <i class="fas fa-user-plus"></i>
+                    </a>
+                         </li>
 
                             <div class="topbar-divider d-none d-sm-block"></div>
 
@@ -322,36 +225,64 @@
 
                 </nav>
                 <!-- End of Topbar -->
-<div class="signup-form">
-    <form action="http://localhost:8080/tour/pvmstapi/user" method="post">
-		<h2>Create an Account</h2>
-		<p class="hint-text">Sign up with PVMST MOTOR </p>
-	
-        <div class="form-group">
-        	<input type="text" class="form-control input-lg" name="user_id" placeholder="UserId" required="required">
-        </div>
-        	<div class="form-group">
-        	<input type="text" class="form-control input-lg" name="user_name" placeholder="userName" required="required">
-        </div>
-		<div class="form-group">
-        	<input type="text" class="form-control input-lg" name="user_address" placeholder="Address" required="required">
-        </div>
-        <div class="form-group">
-        	<input type="text" class="form-control input-lg" name="user_mobile" placeholder="Mobile Number" required="required">
-        </div>
-		<div class="form-group">
-            <input type="text" class="form-control input-lg" name="user_email" placeholder="Mail" required="required">
-        </div>
-		<div class="form-group">
-            <input type="text" class="form-control input-lg" name="password" placeholder=" Password" required="required">
-        </div>  
-        <div class="form-group">
-          <input type="submit" value="Submit">
-        </div>
-    </form>
-    <div class="text-center">Already have an account? <a href="#">Login here</a></div>
-</div>
 
+	
+	       <div class="wrapper wrapper--w790">
+        <div class="card card-5">
+            <div class="card-heading">
+                <h2 class="title">Apply Package Details</h2>
+            </div>
+            <div class="card-body">
+                <form method="POST">
+                    <div class="form-row m-b-55">
+                        <div class="form-row">
+                            <div class="name">Enter Package ID:</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="company">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Package Name</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="company">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Package Type</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="email">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Package Amount</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="email">
+                                </div>
+                            </div>
+                        </div>
+                    
+
+                    </div>
+                       <div>
+            <button class="btn btn--radius-2 btn--red" type="submit">Add Package Details</button>
+        </div>
+            </div>
+          
+        </div>
+       
+        </form>
+    </div>
+    </div>
+    </div>
+    </div>
+           
                 <!-- Footer -->
 
                 <!-- End of Footer -->
@@ -374,7 +305,7 @@
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
                         <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">Ã—</span>
+            <span aria-hidden="true">×</span>
           </button>
                     </div>
                     <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
