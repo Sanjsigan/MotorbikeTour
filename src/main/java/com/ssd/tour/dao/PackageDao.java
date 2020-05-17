@@ -68,7 +68,7 @@ public class PackageDao {
 			
 		}
 		
-		//Fetching a single data from database.
+		
 		public Packages get(int package_id){
 			Packages packages = new Packages();
 			
