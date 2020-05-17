@@ -28,6 +28,13 @@
 
     <!-- Custom styles for this template-->
     <link href="https://blackrockdigital.github.io/startbootstrap-sb-admin-2/css/sb-admin-2.min.css" rel="stylesheet">
+     <link href="https://blackrockdigital.github.io/startbootstrap-sb-admin-2/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="https://colorlib.com/etc/regform/colorlib-regform-5/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="https://colorlib.com/etc/regform/colorlib-regform-5/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+     <link href="https://colorlib.com/etc/regform/colorlib-regform-5/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+     <link href="https://colorlib.com/etc/regform/colorlib-regform-5/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+     <link href="https://colorlib.com/etc/regform/colorlib-regform-5/css/main.css" rel="stylesheet" media="all">
 
 </head>
 
@@ -220,6 +227,61 @@
                 <!-- End of Topbar -->
 
 	
+	       <div class="wrapper wrapper--w790">
+        <div class="card card-5">
+            <div class="card-heading">
+                <h2 class="title">Apply Bike Details</h2>
+            </div>
+            <div class="card-body">
+                <form method="POST">
+                    <div class="form-row m-b-55">
+                        <div class="form-row">
+                            <div class="name">Enter Bike ID:</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="company">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Bike Model</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="company">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Maximum Horse Power</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="email">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Amount of Bike></div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="email">
+                                </div>
+                            </div>
+                        </div>
+                    
+
+                    </div>
+                       <div>
+            <button class="btn btn--radius-2 btn--red" type="submit">Add Bike Details</button>
+        </div>
+            </div>
+          
+        </div>
+       
+        </form>
+    </div>
+    </div>
+    </div>
+    </div>
            
                 <!-- Footer -->
 
