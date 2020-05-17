@@ -63,20 +63,20 @@ public class BookingDao {
 				
 			}
 			
-			return pacList;
+			return bookList;
 			
 		}
 		
 		//Fetching a single data from database.
-		public Packages get(int package_id){
-			Packages packages = new Packages();
+		public Booking get(int package_id){
+			Booking booking = new Booking();
 			
 			
 			try {
 				
 				Connection conn = Configs.getDbConnection();
 				
-				String sql = "SELECT * FROM package WHERE package_id = ?";//Query to be execute
+				String sql = "SELECT * FROM booking WHERE booking_id = ?";//Query to be execute
 				PreparedStatement preparedStatement = conn.prepareStatement(sql);
 				preparedStatement.setInt(1, package_id); //binding the parameter value, 1 is for specify first parameter.
 				
@@ -84,11 +84,12 @@ public class BookingDao {
 				
 				while(resultSet.next()) {
 					
-					packages.setId(resultSet.getInt("package_id"));
-					packages.setPacName(resultSet.getString("package_name"));
-					packages.setType(resultSet.getString("package_type"));
-					packages.setAmount(resultSet.getInt("package_amount"));
-					packages.setDesc(resultSet.getString("package_desc"));
+					booking.setBooking_id(resultSet.getInt("booking_id"));
+					booking.setName(resultSet.getString("name"));
+					booking.setMail(resultSet.getString("mail"));
+					booking.setPackage_id(resultSet.getInt("package_id"));
+					booking.setBike_id(resultSet.getInt("bike_id"));
+					
 					
 					
 					
@@ -99,23 +100,23 @@ public class BookingDao {
 				System.out.println("Error : "+e.getMessage());
 			}
 			
-			return packages;
+			return booking;
 			
 		}
 		
-		public boolean add(Packages packages) throws ClassNotFoundException, SQLException {
+		public boolean add(Booking booking) throws ClassNotFoundException, SQLException {
 			
-			if(packages != null) {
+			if(booking != null) {
 				
 				Connection connection = Configs.getDbConnection();
-				String sql = "INSERT INTO `package` (`package_id`,`package_name`, `package_type`, `package_amount`, `package_desc`) " + 
+				String sql = "INSERT INTO `booking` (`booking_id`,`name`, `type`, `package_id`, `bike_id`) " + 
 							"VALUES (?,?,?,?,?)";
 				PreparedStatement stmt = connection.prepareStatement(sql);
-				stmt.setInt(1, packages.getId());
-				stmt.setString(2, packages.getPacName());
-				stmt.setString(3, packages.getType());
-				stmt.setInt(4, packages.getAmount());
-				stmt.setString(5, packages.getDesc());
+				stmt.setInt(1, booking.getBooking_id());
+				stmt.setString(2, booking.getName());
+				stmt.setString(3, booking.getMail());
+				stmt.setInt(4, booking.getPackage_id());
+				stmt.setInt(5, booking.getBike_id());
 			
 				
 				int count = stmt.executeUpdate();
