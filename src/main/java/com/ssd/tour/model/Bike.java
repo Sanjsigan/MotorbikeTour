@@ -4,19 +4,8 @@ public class Bike {
 
 	private int id;
 	private String model;
-	private String MaximumHorse;
-	private double Amount;
-	
-	public Bike() {
-		super();
-	}
-	
-	public Bike(int id, String model, String maximumHorse, double amount) {
-		this.id = id;
-		this.model = model;
-		MaximumHorse = maximumHorse;
-		Amount = amount;
-	}
+	private String maximumHorse;
+	private double amount;
 	
 	public int getId() {
 		return id;
@@ -31,15 +20,25 @@ public class Bike {
 		this.model = model;
 	}
 	public String getMaximumHorse() {
-		return MaximumHorse;
+		return maximumHorse;
 	}
 	public void setMaximumHorse(String maximumHorse) {
-		MaximumHorse = maximumHorse;
+		this.maximumHorse = maximumHorse;
 	}
 	public double getAmount() {
-		return Amount;
+		return amount;
 	}
 	public void setAmount(double amount) {
-		Amount = amount;
+		this.amount = amount;
 	}
+	
+	public Bike(int id, String model, String maximumHorse, double amount) {
+		super();
+		this.id = id;
+		this.model = model;
+		this.maximumHorse = maximumHorse;
+		this.amount = amount;
+	}
+	
+	
 }
