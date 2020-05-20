@@ -11,6 +11,13 @@ public class Bike {
 		super();
 	}
 	
+	public Bike(int id, String model, String maximumHorse, double amount) {
+		this.id = id;
+		this.model = model;
+		MaximumHorse = maximumHorse;
+		Amount = amount;
+	}
+	
 	public int getId() {
 		return id;
 	}
