@@ -6,6 +6,14 @@ public class Hotel {
 	private String Address;
 	private double Amount;
 	
+	public Hotel(int iD, String name, String address, double amount) {
+		super();
+		ID = iD;
+		Name = name;
+		Address = address;
+		Amount = amount;
+	}
+	
 	public int getID() {
 		return ID;
 	}
