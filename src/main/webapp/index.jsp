@@ -64,18 +64,28 @@
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
+                 <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-motorcycle"></i>
-                    <span>Vechile Details</span>
+                    <i class="fas fa-user-plus"></i>
+                    <span>Admin Side</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                       
-                        <a class="collapse-item" href="buttons.html">Normal Bikes</a>
-                        <a class="collapse-item" href="cards.html">Royal En Field</a>
+                        <a class="collapse-item" href="buttons.html">Update Details</a>
+                        <a class="collapse-item" href="cards.html">Delete Details</a>
+                         <a class="collapse-item" href="cards.html">Add Bike Details</a>
+                         <a class="collapse-item" href="cards.html">Add Package Details</a>
+                      
                     </div>
                 </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse"  aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-motorcycle"></i>
+                    <span>Vechile Details</span>
+                </a>
+               
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="packages.jsp">
@@ -176,9 +186,7 @@
                     <span class="mr-2 d-none d-lg-inline text-gray-600 small">SignUp</span>
                     <i class="fas fa-user-plus"></i>
                     </a>
-
-            </li>
-
+                         </li>
 
                             <div class="topbar-divider d-none d-sm-block"></div>
 
@@ -212,7 +220,7 @@
                 <!-- End of Topbar -->
 
 	
-
+           
                 <!-- Footer -->
 
                 <!-- End of Footer -->

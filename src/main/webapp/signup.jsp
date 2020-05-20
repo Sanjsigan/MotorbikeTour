@@ -12,7 +12,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>pvmst-motor tour</title>
+    <title>SignUp</title>
 
     <!-- Custom fonts for this template-->
     <link href="https://blackrockdigital.github.io/startbootstrap-sb-admin-2/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -165,18 +165,27 @@
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
+                 <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-motorcycle"></i>
-                    <span>Vechile Details</span>
+                    <i class="fas fa-user-plus"></i>
+                    <span>Admin Side</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                       
-                        <a class="collapse-item" href="buttons.html">Normal Bikes</a>
-                        <a class="collapse-item" href="cards.html">Royal En Field</a>
+                      <a class="collapse-item" href="buttons.html">Update Details</a>
+                        <a class="collapse-item" href="cards.html">Delete Details</a>
+                         <a class="collapse-item" href="cards.html">Add Bike Details</a>
+                         <a class="collapse-item" href="cards.html">Add Package Details</a>
                     </div>
                 </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse"  aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-motorcycle"></i>
+                    <span>Vechile Details</span>
+                </a>
+           
             </li>
            <li class="nav-item">
                 <a class="nav-link" href="packages.jsp">
@@ -314,30 +323,30 @@
                 </nav>
                 <!-- End of Topbar -->
 <div class="signup-form">
-    <form action="http://localhost:8080/tour/pvmstapi/pvmst" method="post">
+    <form action="http://localhost:8080/tour/pvmstapi/user" method="post">
 		<h2>Create an Account</h2>
-		<p class="hint-text">Sign up with your social media account or email address</p>
+		<p class="hint-text">Sign up with PVMST MOTOR </p>
 	
         <div class="form-group">
-        	<input type="text" class="form-control input-lg" name="username" placeholder="Username" required="required">
+        	<input type="text" class="form-control input-lg" name="user_id" placeholder="UserId" required="required">
         </div>
         	<div class="form-group">
-        	<input type="text" class="form-control input-lg" name="address" placeholder="Current Address" required="required">
+        	<input type="text" class="form-control input-lg" name="user_name" placeholder="userName" required="required">
         </div>
 		<div class="form-group">
-        	<input type="email" class="form-control input-lg" name="email" placeholder="Email Address" required="required">
+        	<input type="text" class="form-control input-lg" name="user_address" placeholder="Address" required="required">
         </div>
         <div class="form-group">
-        	<input type="text" class="form-control input-lg" name="mobile" placeholder="Mobile Number" required="required">
+        	<input type="text" class="form-control input-lg" name="user_mobile" placeholder="Mobile Number" required="required">
         </div>
 		<div class="form-group">
-            <input type="password" class="form-control input-lg" name="password" placeholder="Password" required="required">
+            <input type="text" class="form-control input-lg" name="user_email" placeholder="Mail" required="required">
         </div>
 		<div class="form-group">
-            <input type="password" class="form-control input-lg" name="confirm_password" placeholder="Confirm Password" required="required">
+            <input type="text" class="form-control input-lg" name="password" placeholder=" Password" required="required">
         </div>  
         <div class="form-group">
-            <button type="submit" class="btn btn-success btn-lg btn-block signup-btn">Sign Up</button>
+          <input type="submit" value="Submit">
         </div>
     </form>
     <div class="text-center">Already have an account? <a href="#">Login here</a></div>

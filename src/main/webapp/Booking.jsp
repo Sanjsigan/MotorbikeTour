@@ -20,7 +20,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Packages Details</title>
+    <title>pvmst-motor tour</title>
 
     <!-- Custom fonts for this template-->
     <link href="https://blackrockdigital.github.io/startbootstrap-sb-admin-2/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -28,7 +28,12 @@
 
     <!-- Custom styles for this template-->
     <link href="https://blackrockdigital.github.io/startbootstrap-sb-admin-2/css/sb-admin-2.min.css" rel="stylesheet">
-
+    <link href="https://colorlib.com/etc/regform/colorlib-regform-5/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="https://colorlib.com/etc/regform/colorlib-regform-5/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+     <link href="https://colorlib.com/etc/regform/colorlib-regform-5/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+     <link href="https://colorlib.com/etc/regform/colorlib-regform-5/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+     <link href="https://colorlib.com/etc/regform/colorlib-regform-5/css/main.css" rel="stylesheet" media="all">
 </head>
 
 <body id="page-top">
@@ -72,29 +77,22 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                       
-                        <a class="collapse-item" href="buttons.html">Motor Bike Store</a>
-                        <a class="collapse-item" href="cards.html">Hottle Store</a>
-                         <a class="collapse-item" href="cards.html">Packages Store</a>
-                          <a class="collapse-item" href="cards.html">Booking Views</a>
-                           <a class="collapse-item" href="cards.html">User Views</a>
+                       <a class="collapse-item" href="buttons.html">Update Details</a>
+                        <a class="collapse-item" href="cards.html">Delete Details</a>
+                         <a class="collapse-item" href="cards.html">Add Bike Details</a>
+                         <a class="collapse-item" href="cards.html">Add Package Details</a>
                     </div>
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse"  aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-motorcycle"></i>
                     <span>Vechile Details</span>
                 </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                      
-                        <a class="collapse-item" href="buttons.html">Normal Bikes</a>
-                        <a class="collapse-item" href="cards.html">Royal En Field</a>
-                    </div>
-                </div>
+                
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="packages.jsp">
                     <i class="far fa-address-book"></i>
                     <span>Our Tour Packages</span></a>
 
@@ -192,9 +190,7 @@
                     <span class="mr-2 d-none d-lg-inline text-gray-600 small">SignUp</span>
                     <i class="fas fa-user-plus"></i>
                     </a>
-
-            </li>
-
+                         </li>
 
                             <div class="topbar-divider d-none d-sm-block"></div>
 
@@ -227,77 +223,68 @@
                 </nav>
                 <!-- End of Topbar -->
 
-	<table class="table">
-		<thead class="thead-light">
-			
-		</thead>
-		<tbody>
+	       <div class="wrapper wrapper--w790">
+        <div class="card card-5">
+            <div class="card-heading">
+                <h2 class="title">Apply Register Here!!..</h2>
+            </div>
+            <div class="card-body">
+                <form method="POST">
+                    <div class="form-row m-b-55">
+                        <div class="form-row">
+                            <div class="name">Enter Your Booking ID</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="company">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Your Name</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="company">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Email</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="email" name="email">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Enter Your Package ID</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="email" name="email">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Enter Your Bike ID</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="email" name="email">
+                                </div>
+                            </div>
+                        </div>
 
-			<th scope="row">ID</th>
-			<th scope="row">Name</th>
-			<th scope="row">Type</th>
-			<th scope="row">Amount</th>
-			<th scope="row">Desc</th>
-
-
-<% 
-   			  	final String API_URL = "http://localhost:8080/tour/pvmstapi/pvmst";
-   			
-   				//Fetching data from API.
-   				try{
-					URL url = new URL(API_URL);
-					HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
-					httpURLConnection.setRequestMethod("GET");
-					httpURLConnection.setDoInput(true); //Downloads.
-					httpURLConnection.setDoOutput(false);//Uploads.
-					
-					InputStream inputStream = (InputStream)httpURLConnection.getInputStream();
-					InputStreamReader inputStreamReader = new InputStreamReader(inputStream, "utf-8");
-					BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-					
-					if(httpURLConnection.getResponseCode() == 200){
-						
-						//Reading the file line by line.
-						
-						String line = "";
-						StringBuilder sb = new StringBuilder();
-						
-						while((line = bufferedReader.readLine()) != null){
-							sb.append(line);
-						}
-						
-						String jsonString = sb.toString();
-						
-						JsonArray jsonArray = JsonParser.parseString(jsonString).getAsJsonArray();	
-						
-						for(int i =0; i < jsonArray.size(); i++){
-							JsonObject obj = jsonArray.get(i).getAsJsonObject();
-							
-							%>
-								<tr >
-									<td class="table-secondary"><% out.print(obj.get("package_id").getAsString()); %></td>
-									<td class="table-success"><% out.print(obj.get("package_name").getAsString()); %></td>
-									<td class="table-danger"><% out.print(obj.get("package_type").getAsString()); %></td>
-									<td class="table-warning"><% out.print(obj.get("package_amount").getAsString()); %></td>
-									<td class="table-info"><% out.print(obj.get("package_desc").getAsString()); %></td>
-								
-								</tr>
-							<% 
-						}
-						
-					}
-   					
-   				}catch(Exception e){
-   					e.printStackTrace();
-   					
-   					out.print("Error : "+e.getMessage());
-   				}
-    			
-   			%>
-   		
-		</tbody>
-	</table>
-
+                    </div>
+                       <div>
+            <button class="btn btn--radius-2 btn--red" type="submit">Conform Booking</button>
+        </div>
+            </div>
+          
+        </div>
+       
+        </form>
+    </div>
+    </div>
+    </div>
+    </div>
                 <!-- Footer -->
 
                 <!-- End of Footer -->

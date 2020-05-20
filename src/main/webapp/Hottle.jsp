@@ -20,7 +20,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Packages Details</title>
+    <title>Hottle Details</title>
 
     <!-- Custom fonts for this template-->
     <link href="https://blackrockdigital.github.io/startbootstrap-sb-admin-2/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -72,29 +72,23 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                       
-                        <a class="collapse-item" href="buttons.html">Motor Bike Store</a>
-                        <a class="collapse-item" href="cards.html">Hottle Store</a>
-                         <a class="collapse-item" href="cards.html">Packages Store</a>
-                          <a class="collapse-item" href="cards.html">Booking Views</a>
-                           <a class="collapse-item" href="cards.html">User Views</a>
+                    
+                        <a class="collapse-item" href="buttons.html">Update Details</a>
+                        <a class="collapse-item" href="cards.html">Delete Details</a>
+                         <a class="collapse-item" href="cards.html">Add Bike Details</a>
+                         <a class="collapse-item" href="cards.html">Add Package Details</a>
                     </div>
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse"  aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-motorcycle"></i>
                     <span>Vechile Details</span>
                 </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                      
-                        <a class="collapse-item" href="buttons.html">Normal Bikes</a>
-                        <a class="collapse-item" href="cards.html">Royal En Field</a>
-                    </div>
-                </div>
+             
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="packages.jsp">
                     <i class="far fa-address-book"></i>
                     <span>Our Tour Packages</span></a>
 
@@ -192,9 +186,7 @@
                     <span class="mr-2 d-none d-lg-inline text-gray-600 small">SignUp</span>
                     <i class="fas fa-user-plus"></i>
                     </a>
-
-            </li>
-
+                         </li>
 
                             <div class="topbar-divider d-none d-sm-block"></div>
 
@@ -227,77 +219,8 @@
                 </nav>
                 <!-- End of Topbar -->
 
-	<table class="table">
-		<thead class="thead-light">
-			
-		</thead>
-		<tbody>
-
-			<th scope="row">ID</th>
-			<th scope="row">Name</th>
-			<th scope="row">Type</th>
-			<th scope="row">Amount</th>
-			<th scope="row">Desc</th>
-
-
-<% 
-   			  	final String API_URL = "http://localhost:8080/tour/pvmstapi/pvmst";
-   			
-   				//Fetching data from API.
-   				try{
-					URL url = new URL(API_URL);
-					HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
-					httpURLConnection.setRequestMethod("GET");
-					httpURLConnection.setDoInput(true); //Downloads.
-					httpURLConnection.setDoOutput(false);//Uploads.
-					
-					InputStream inputStream = (InputStream)httpURLConnection.getInputStream();
-					InputStreamReader inputStreamReader = new InputStreamReader(inputStream, "utf-8");
-					BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-					
-					if(httpURLConnection.getResponseCode() == 200){
-						
-						//Reading the file line by line.
-						
-						String line = "";
-						StringBuilder sb = new StringBuilder();
-						
-						while((line = bufferedReader.readLine()) != null){
-							sb.append(line);
-						}
-						
-						String jsonString = sb.toString();
-						
-						JsonArray jsonArray = JsonParser.parseString(jsonString).getAsJsonArray();	
-						
-						for(int i =0; i < jsonArray.size(); i++){
-							JsonObject obj = jsonArray.get(i).getAsJsonObject();
-							
-							%>
-								<tr >
-									<td class="table-secondary"><% out.print(obj.get("package_id").getAsString()); %></td>
-									<td class="table-success"><% out.print(obj.get("package_name").getAsString()); %></td>
-									<td class="table-danger"><% out.print(obj.get("package_type").getAsString()); %></td>
-									<td class="table-warning"><% out.print(obj.get("package_amount").getAsString()); %></td>
-									<td class="table-info"><% out.print(obj.get("package_desc").getAsString()); %></td>
-								
-								</tr>
-							<% 
-						}
-						
-					}
-   					
-   				}catch(Exception e){
-   					e.printStackTrace();
-   					
-   					out.print("Error : "+e.getMessage());
-   				}
-    			
-   			%>
-   		
-		</tbody>
-	</table>
-
+	
+           
                 <!-- Footer -->
 
                 <!-- End of Footer -->

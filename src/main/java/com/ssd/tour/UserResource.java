@@ -18,30 +18,27 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import com.ssd.tour.dao.PackageDao;
-import com.ssd.tour.dao.UserDao;
-import com.ssd.tour.model.Packages;
-import com.ssd.tour.model.Users;
 import com.google.gson.Gson;
+import com.ssd.tour.dao.UserDao;
+import com.ssd.tour.model.Users;
 
-@Path("pvmst")
-public class OurPackages {
-
+public class UserResource {
+	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getAll() {
 		//Jackson
 		//GSON
-		Object object = PackageDao.getInstance().getAll();
+		Object object = UserDao.getInstance().getAll();
 		
 		Gson gson = new Gson();
 		
 		if(object instanceof List<?>) { //Data type  checking.
 			
 			@SuppressWarnings("unchecked")
-			List<Packages> packages = (List<Packages>)object; //Casting.
+			List<Users> cars = (List<Users>)object; //Casting.
 			
-			String jsonString = gson.toJson(packages);
+			String jsonString = gson.toJson(cars);
 			return Response
 					.status(200)
 					.entity(jsonString)
@@ -62,14 +59,14 @@ public class OurPackages {
 	@GET
 	@Path("{id}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response getAPackage(@PathParam("id") String id) {
+	public Response getAUser(@PathParam("id") String id) {
 		
-		int pacid = Integer.parseInt(id);
+		int carid = Integer.parseInt(id);
 		
-		Packages packages = PackageDao.getInstance().get(pacid);
+		Users user = UserDao.getInstance().get(carid);
 		
 		Gson gson = new Gson();
-		String jsonString = gson.toJson(packages);
+		String jsonString = gson.toJson(user);
 		
 		return Response
 				.status(200)
@@ -80,41 +77,26 @@ public class OurPackages {
 	
 	@POST
 	@Produces(MediaType.APPLICATION_JSON)
-	public void addPackage(@FormParam("package_id") int id,
-							@FormParam("package_name") String pacname,
-							@FormParam("package_type") String pactype,
-							@FormParam("package_amount") int pacamount,
-							@FormParam("package_desc") String pacdesc
-						)
+	public void adduser(@FormParam("user_id") int id,
+							@FormParam("user_name") String name,
+							@FormParam("user_address") String address,
+							@FormParam("user_mobile") int mobile,
+							@FormParam("user_email") String email,
+							@FormParam("password") String password)
 									throws ClassNotFoundException, SQLException {
 		
-		Packages packages= new Packages();
+		Users user= new Users();
 		
-		packages.setId(id);
-		packages.setPacName(pacname);
-		packages.setType(pactype);
-		packages.setAmount(pacamount);
-		packages.setDesc(pacdesc);
-	
+		user.setId(id);
+		user.setName(name);
+		user.setAddress(address);
+		user.setMobile(mobile);
+		user.setMail(email);
+		user.setMail(password);
 		
 		//boolean result = CarDao.getInstance().add(car);
 	
 	}
-}
 
-// Database Simulation.
-//	public List<Car> getCars(){
-//		List<Car> carList = new ArrayList<Car>();
-//		
-//		Car car = new Car(1, "520D", "BMW", 2020);
-//		carList.add(car);
-//		
-//		Car car1 = new Car(2, "Axio", "Toyota", 2017);
-//		carList.add(car1);
-//		
-//		Car car2 = new Car(3, "A7", "Audi", 2020);
-//		carList.add(car2);
-//		
-//		
-//		return carList;
-//	}
+	
+}
