@@ -20,7 +20,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Update Package</title>
+    <title>Update Package Details</title>
 
     <!-- Custom fonts for this template-->
     <link href="https://blackrockdigital.github.io/startbootstrap-sb-admin-2/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -230,13 +230,13 @@
 	       <div class="wrapper wrapper--w790">
         <div class="card card-5">
             <div class="card-heading">
-                <h2 class="title">Update Bike Details</h2>
+                <h2 class="title">Update Package Details</h2>
             </div>
             <div class="card-body">
                 <form method="POST">
                     <div class="form-row m-b-55">
                         <div class="form-row">
-                            <div class="name">Enter Bike ID:</div>
+                            <div class="name">Enter Package ID:</div>
                             <div class="value">
                                 <div class="input-group">
                                     <input class="input--style-5" type="text" name="company">
@@ -244,7 +244,7 @@
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="name">Enter Bike Model:</div>
+                            <div class="name">Enter Package Name</div>
                             <div class="value">
                                 <div class="input-group">
                                     <input class="input--style-5" type="text" name="company">
@@ -252,7 +252,7 @@
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="name">Enter Maximum Horse Power:</div>
+                            <div class="name">Enter Package Type</div>
                             <div class="value">
                                 <div class="input-group">
                                     <input class="input--style-5" type="text" name="email">
@@ -260,7 +260,7 @@
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="name">Enter Amount of Bike></div>
+                            <div class="name">Enter Package Amount</div>
                             <div class="value">
                                 <div class="input-group">
                                     <input class="input--style-5" type="text" name="email">
