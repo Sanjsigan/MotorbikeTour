@@ -72,16 +72,18 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                       
-                        <a class="collapse-item" href="buttons.html">Update Details</a>
+                        <a class="collapse-item" href="UpdatePackage.jsp">Update Package Details</a>
+                         <a class="collapse-item" href="UpdateBikeDetails">Update Bike Details</a>
+                          <a class="collapse-item" href="Addbike.jsp">Add Bike Details</a>
+                         <a class="collapse-item" href="Addpackage.jsp">Add Package Details</a>
                         <a class="collapse-item" href="cards.html">Delete Details</a>
-                         <a class="collapse-item" href="cards.html">Add Bike Details</a>
-                         <a class="collapse-item" href="cards.html">Add Package Details</a>
+                 
                       
                     </div>
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse"  aria-expanded="true" aria-controls="collapseTwo">
+                <a class="nav-link collapsed" href="BikeDetails.jsp" data-toggle="collapse"  aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-motorcycle"></i>
                     <span>Vechile Details</span>
                 </a>
