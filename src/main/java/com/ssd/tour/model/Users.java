@@ -9,7 +9,7 @@ public class Users {
 	private String mail;
 	private String password;
 	
-	public Users () {
+	public Users() {
 		super();
 	}
 	

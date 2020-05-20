@@ -6,11 +6,11 @@ public class Bike {
 	private String model;
 	private String maximumHorse;
 	private double amount;
-	
-	public Bike () {
+
+	public Bike() {
 		super();
 	}
-	
+
 	public Bike(int id, String model, String maximumHorse, double amount) {
 		super();
 		this.id = id;
@@ -18,33 +18,37 @@ public class Bike {
 		this.maximumHorse = maximumHorse;
 		this.amount = amount;
 	}
-	
+
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	public String getModel() {
 		return model;
 	}
+
 	public void setModel(String model) {
 		this.model = model;
 	}
+
 	public String getMaximumHorse() {
 		return maximumHorse;
 	}
+
 	public void setMaximumHorse(String maximumHorse) {
 		this.maximumHorse = maximumHorse;
 	}
+
 	public double getAmount() {
 		return amount;
 	}
+
 	public void setAmount(double amount) {
 		this.amount = amount;
 	}
-	
-	
-	
-	
+
 }
