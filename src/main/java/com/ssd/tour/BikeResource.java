@@ -30,9 +30,9 @@ public class BikeResource {
 		if (object instanceof List<?>) { // Data type checking.
 
 			@SuppressWarnings("unchecked")
-			List<Bike> cars = (List<Bike>) object; // Casting.
+			List<Bike> bike = (List<Bike>) object; // Casting.
 
-			String jsonString = gson.toJson(cars);
+			String jsonString = gson.toJson(bike);
 			return Response.status(200).entity(jsonString).build();
 		} else {
 			@SuppressWarnings("unchecked")
@@ -62,7 +62,7 @@ public class BikeResource {
 
 	@POST
 	@Produces(MediaType.APPLICATION_JSON)
-	public void adduser(@FormParam("bike_id") int id, @FormParam("bike_model") String model,
+	public void addBike(@FormParam("bike_id") int id, @FormParam("bike_model") String model,
 			@FormParam("bike_horse") String hourse, @FormParam("bike_amount") Double amount)
 			throws ClassNotFoundException, SQLException {
 
