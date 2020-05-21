@@ -30,9 +30,9 @@ public class BookingResource {
 		if(object instanceof List<?>) { //Data type  checking.
 			
 			@SuppressWarnings("unchecked")
-			List<Booking> packages = (List<Booking>)object; //Casting.
+			List<Booking> booking = (List<Booking>)object; //Casting.
 			
-			String jsonString = gson.toJson(packages);
+			String jsonString = gson.toJson(booking);
 			return Response
 					.status(200)
 					.entity(jsonString)
@@ -53,7 +53,7 @@ public class BookingResource {
 	@GET
 	@Path("{booking_id}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response getAPackage(@PathParam("id") String id) {
+	public Response getABooking(@PathParam("id") String id) {
 		
 		int bookid = Integer.parseInt(id);
 		
@@ -71,7 +71,7 @@ public class BookingResource {
 	
 	@POST
 	@Produces(MediaType.APPLICATION_JSON)
-	public void addPackage(@FormParam("booking_id") int id,
+	public void addBooking(@FormParam("booking_id") int id,
 							@FormParam("name") String name,
 							@FormParam("mail") String mail,
 							@FormParam("package_id") int package_id,
@@ -88,7 +88,7 @@ public class BookingResource {
 		booking.setBike_id(bike_id);
 	
 		
-		//boolean result = CarDao.getInstance().add(car);
+
 	
 	}
 
