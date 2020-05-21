@@ -23,7 +23,6 @@ public class UserTest {
 	     Assert.assertTrue(user.getAddress().equals(address));
 	     Assert.assertTrue(user.getPassword().equals(password));
 	     
-	
-	
+
 	}
 }
