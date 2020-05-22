@@ -47,11 +47,11 @@ public class BikeResource {
 	@GET
 	@Path("{id}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response getAUser(@PathParam("id") String id) {
+	public Response getABike(@PathParam("id") String id) {
 
-		int carid = Integer.parseInt(id);
+		int bikeid = Integer.parseInt(id);
 
-		Bike bike = BikeDao.getInstance().get(carid);
+		Bike bike = BikeDao.getInstance().get(bikeid);
 
 		Gson gson = new Gson();
 		String jsonString = gson.toJson(bike);
@@ -62,16 +62,16 @@ public class BikeResource {
 
 	@POST
 	@Produces(MediaType.APPLICATION_JSON)
-	public void addBike(@FormParam("bike_id") int id, @FormParam("bike_model") String model,
-			@FormParam("bike_horse") String hourse, @FormParam("bike_amount") Double amount)
+	public void addBike(@FormParam("bike_id") int bike_id, @FormParam("bike_model") String bike_model,
+			@FormParam("bike_horse") String bike_horse, @FormParam("bike_amount") Double bike_amount)
 			throws ClassNotFoundException, SQLException {
 
 		Bike bike = new Bike();
 
-		bike.setId(id);
-		bike.setModel(model);
-		bike.setMaximumHorse(hourse);
-		bike.setAmount(amount);
+		bike.setId(bike_id);
+		bike.setModel(bike_model);
+		bike.setMaximumHorse(bike_horse);
+		bike.setAmount(bike_amount);
 
 		// boolean result = CarDao.getInstance().add(car);
 

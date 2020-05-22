@@ -231,6 +231,7 @@
     </header>
 
     <!-- Page Features -->
+     <h3 class="display-3">OUR MEMBERS...</h3>
     <div class="row text-center">
 
       <div class="col-lg-3 col-md-6 mb-4">

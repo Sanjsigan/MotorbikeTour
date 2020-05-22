@@ -234,13 +234,13 @@
                 <h2 class="title">Apply Package Details</h2>
             </div>
             <div class="card-body">
-                <form method="POST">
+                <form action="http://localhost:8080/tour/pvmstapi/pvmst" method="POST">
                     <div class="form-row m-b-55">
                         <div class="form-row">
                             <div class="name">Enter Package ID:</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="company">
+                                    <input class="input--style-5" type="text" name="package_id">
                                 </div>
                             </div>
                         </div>
@@ -248,7 +248,7 @@
                             <div class="name">Package Name</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="company">
+                                    <input class="input--style-5" type="text" name="package_name">
                                 </div>
                             </div>
                         </div>
@@ -256,7 +256,7 @@
                             <div class="name">Package Type</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="email">
+                                    <input class="input--style-5" type="text" name="package_type">
                                 </div>
                             </div>
                         </div>
@@ -264,7 +264,15 @@
                             <div class="name">Package Amount</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="email">
+                                    <input class="input--style-5" type="text" name="package_amount">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Package Desc</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name=package_desc>
                                 </div>
                             </div>
                         </div>

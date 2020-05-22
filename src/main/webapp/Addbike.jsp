@@ -240,7 +240,7 @@
                             <div class="name">Enter Bike ID:</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="company">
+                                    <input class="input--style-5" type="text" name="bike_id">
                                 </div>
                             </div>
                         </div>
@@ -248,7 +248,7 @@
                             <div class="name">Bike Model</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="company">
+                                    <input class="input--style-5" type="text" name="bike_model">
                                 </div>
                             </div>
                         </div>
@@ -256,7 +256,7 @@
                             <div class="name">Maximum Horse Power</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="email">
+                                    <input class="input--style-5" type="text" name="bike_horse">
                                 </div>
                             </div>
                         </div>
@@ -264,7 +264,7 @@
                             <div class="name">Amount of Bike></div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="email">
+                                    <input class="input--style-5" type="text" name="bike_amount">
                                 </div>
                             </div>
                         </div>
@@ -275,10 +275,10 @@
             <button class="btn btn--radius-2 btn--red" type="submit">Add Bike Details</button>
         </div>
             </div>
-          
+           
         </div>
        
-        </form>
+       </form>
     </div>
     </div>
     </div>
