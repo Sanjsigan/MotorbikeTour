@@ -1,5 +1,6 @@
 package com.ssd.tour.model;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 public class TestPackage {
@@ -14,8 +15,11 @@ public class TestPackage {
 	int amount=87766;
 	String desc ="desc@#";
 	
+	Packages packages = new Packages(id,name,type,amount,desc);
 	
-	
+	Assert.assertTrue(packages.getPacName().equals(name));
+	Assert.assertTrue( packages.getType().equals(type));
+	Assert.assertTrue( packages.getDesc().equals(desc));
 		
 	}
 
