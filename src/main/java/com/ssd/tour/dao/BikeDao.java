@@ -115,7 +115,7 @@ public class BikeDao {
 		return false;
 
 	}
-	public boolean updateBook(Bike bike) throws ClassNotFoundException, SQLException {
+	public boolean updateBike(Bike bike) throws ClassNotFoundException, SQLException {
 		if (bike != null) {
 			Connection connection = Configs.getDbConnection();
 			String sql = "UPDATE book SET bike_name = ?, bike_model = ?, bike_horse = ?, bike_amount=?";

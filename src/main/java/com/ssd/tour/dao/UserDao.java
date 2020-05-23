@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.ssd.tour.model.Hotel;
 import com.ssd.tour.model.Users;
 
 public class UserDao {
@@ -126,6 +127,32 @@ public class UserDao {
 
 		return false;
 
+	}
+	public boolean updatUser(Users user) throws ClassNotFoundException, SQLException {
+		if (user != null) {
+			Connection connection = Configs.getDbConnection();
+			String sql = "UPDATE signup SET user_name = ?, user_address = ?, user_mobile = ?,user_email = ?,password = ?";
+			sql += " WHERE user_id = ?";
+
+			PreparedStatement stmt = connection.prepareStatement(sql);
+
+			stmt.setInt(1, user.getId());
+			stmt.setString(2, user.getName());
+			stmt.setString(3, user.getAddress());
+			stmt.setInt(4, user.getMobile());
+			stmt.setString(5, user.getMail());
+			stmt.setString(6, user.getPassword());
+
+			int count = stmt.executeUpdate();
+
+			if (count > 0) {
+				System.out.println("Successfull updated");
+				return true;
+			} else {
+				System.out.println("Error occured");
+			}
+		}
+		return false;
 	}
 
 }

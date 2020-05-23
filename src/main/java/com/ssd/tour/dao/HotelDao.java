@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.ssd.tour.model.Bike;
 import com.ssd.tour.model.Hotel;
 
 public class HotelDao {
@@ -113,6 +114,31 @@ public class HotelDao {
 
 		return false;
 
+	}
+
+	public boolean updatHottle(Hotel hotel) throws ClassNotFoundException, SQLException {
+		if (hotel != null) {
+			Connection connection = Configs.getDbConnection();
+			String sql = "UPDATE Hotel SET hotel_name = ?, hotel_address = ?, hotel_amount = ?";
+			sql += " WHERE hotel_id = ?";
+
+			PreparedStatement stmt = connection.prepareStatement(sql);
+
+			stmt.setInt(1, hotel.getId());
+			stmt.setString(2, hotel.getName());
+			stmt.setString(3, hotel.getAddress());
+			stmt.setDouble(4, hotel.getAmount());
+
+			int count = stmt.executeUpdate();
+
+			if (count > 0) {
+				System.out.println("Successfull updated");
+				return true;
+			} else {
+				System.out.println("Error occured");
+			}
+		}
+		return false;
 	}
 
 }
