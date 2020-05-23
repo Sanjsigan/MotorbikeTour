@@ -220,7 +220,75 @@
                 </nav>
                 <!-- End of Topbar -->
 
-	
+	<table class="table">
+		<thead class="thead-light">
+			
+		</thead>
+		<tbody>
+
+			<th scope="row">BIKE ID</th>
+			<th scope="row">BIKE MODEL</th>
+			<th scope="row">BIKE HORSE</th>
+			<th scope="row">BIKE AMOUNT</th>
+			
+
+
+<% 
+   			  	final String API_URL = "http://localhost:8080/tour/pvmstapi/pvmst";
+   			
+   				//Fetching data from API.
+   				try{
+					URL url = new URL(API_URL);
+					HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
+					httpURLConnection.setRequestMethod("GET");
+					httpURLConnection.setDoInput(true); //Downloads.
+					httpURLConnection.setDoOutput(false);//Uploads.
+					
+					InputStream inputStream = (InputStream)httpURLConnection.getInputStream();
+					InputStreamReader inputStreamReader = new InputStreamReader(inputStream, "utf-8");
+					BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+					
+					if(httpURLConnection.getResponseCode() == 200){
+						
+						//Reading the file line by line.
+						
+						String line = "";
+						StringBuilder sb = new StringBuilder();
+						
+						while((line = bufferedReader.readLine()) != null){
+							sb.append(line);
+						}
+						
+						String jsonString = sb.toString();
+						
+						JsonArray jsonArray = JsonParser.parseString(jsonString).getAsJsonArray();	
+						
+						for(int i =0; i < jsonArray.size(); i++){
+							JsonObject obj = jsonArray.get(i).getAsJsonObject();
+							
+							%>
+								<tr >
+									<td class="table-secondary"><% out.print(obj.get("hotel_id").getAsString()); %></td>
+									<td class="table-success"><% out.print(obj.get("hotel_name").getAsString()); %></td>
+									<td class="table-danger"><% out.print(obj.get("hotel_address").getAsString()); %></td>
+									<td class="table-warning"><% out.print(obj.get("hotel_amount").getAsString()); %></td>
+									
+								</tr>
+							<% 
+						}
+						
+					}
+   					
+   				}catch(Exception e){
+   					e.printStackTrace();
+   					
+   					out.print("Error : "+e.getMessage());
+   				}
+    			
+   			%>
+   		
+		</tbody>
+	</table>
            
                 <!-- Footer -->
 
