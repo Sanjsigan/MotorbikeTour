@@ -68,10 +68,10 @@ public class HotelResource {
 
 		Hotel hotel = new Hotel();
 
-		hotel.setId(id);
-		hotel.setName(name);
-		hotel.setAddress(address);
-		hotel.setAmount(amount);
+		hotel.setId(hotel_id);
+		hotel.setName(hotel_name);
+		hotel.setAddress(hotel_address);
+		hotel.setAmount(hotel_amount);
 
 		// boolean result = CarDao.getInstance().add(car);
 
