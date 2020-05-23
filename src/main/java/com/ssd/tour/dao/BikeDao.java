@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.ssd.tour.model.Bike;
+import com.ssd.tour.model.Packages;
 
 public class BikeDao {
 	private static BikeDao newInstance = new BikeDao();
@@ -113,6 +114,31 @@ public class BikeDao {
 
 		return false;
 
+	}
+	public boolean updateBike(Bike bike) throws ClassNotFoundException, SQLException {
+		if (bike != null) {
+			Connection connection = Configs.getDbConnection();
+			String sql = "UPDATE book SET bike_name = ?, bike_model = ?, bike_horse = ?, bike_amount=?";
+			sql += " WHERE bike_id = ?";
+
+			PreparedStatement stmt = connection.prepareStatement(sql);
+
+			stmt.setInt(1, bike.getId());
+			stmt.setString(2, bike.getModel());
+			stmt.setString(3, bike.getMaximumHorse());
+			stmt.setDouble(4, bike.getAmount());
+
+
+			int count = stmt.executeUpdate();
+
+			if (count > 0) {
+				System.out.println("Successfull updated");
+				return true;
+			} else {
+				System.out.println("Error occured");
+			}
+		}
+		return false;
 	}
 
 }

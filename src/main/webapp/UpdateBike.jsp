@@ -234,51 +234,27 @@
                 <h2 class="title">Update Bike Details</h2>
             </div>
             <div class="card-body">
-                <form method="POST">
-                    <div class="form-row m-b-55">
-                        <div class="form-row">
-                            <div class="name">Enter Bike ID:</div>
-                            <div class="value">
-                                <div class="input-group">
-                                    <input class="input--style-5" type="text" name="company">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="name">Enter Bike Model:</div>
-                            <div class="value">
-                                <div class="input-group">
-                                    <input class="input--style-5" type="text" name="company">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="name">Enter Maximum Horse Power:</div>
-                            <div class="value">
-                                <div class="input-group">
-                                    <input class="input--style-5" type="text" name="email">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="name">Enter Amount of Bike></div>
-                            <div class="value">
-                                <div class="input-group">
-                                    <input class="input--style-5" type="text" name="email">
-                                </div>
-                            </div>
-                        </div>
-                    
-
-                    </div>
-                       <div>
-            <button class="btn btn--radius-2 btn--red" type="submit">Update Bike Details</button>
+               <form action="http://localhost:8080/tour/pvmstapi/pvmst" method="post">
+	
+	
+        <div class="form-group">
+        	<input type="text" class="form-control input-lg" name="bike_id" placeholder="Bike ID" required="required">
         </div>
-            </div>
-          
+        	<div class="form-group">
+        	<input type="text" class="form-control input-lg" name="bike_model" placeholder="Bike Model" required="required">
         </div>
-       
-        </form>
+		<div class="form-group">
+        	<input type="text" class="form-control input-lg" name="bike_horse" placeholder="Bike Horse" required="required">
+        </div>
+        <div class="form-group">
+        	<input type="text" class="form-control input-lg" name="bike_amount" placeholder="Bike amount " required="required">
+        </div>
+		
+		
+        <div class="form-group">
+          <input type="submit" value="Update Bike details">
+        </div>
+    </form>
     </div>
     </div>
     </div>

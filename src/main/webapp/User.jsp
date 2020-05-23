@@ -20,7 +20,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Add Package Details</title>
+    <title>Users Details</title>
 
     <!-- Custom fonts for this template-->
     <link href="https://blackrockdigital.github.io/startbootstrap-sb-admin-2/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -28,13 +28,6 @@
 
     <!-- Custom styles for this template-->
     <link href="https://blackrockdigital.github.io/startbootstrap-sb-admin-2/css/sb-admin-2.min.css" rel="stylesheet">
-     <link href="https://blackrockdigital.github.io/startbootstrap-sb-admin-2/css/sb-admin-2.min.css" rel="stylesheet">
-    <link href="https://colorlib.com/etc/regform/colorlib-regform-5/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
-    <link href="https://colorlib.com/etc/regform/colorlib-regform-5/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
-     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
-     <link href="https://colorlib.com/etc/regform/colorlib-regform-5/vendor/select2/select2.min.css" rel="stylesheet" media="all">
-     <link href="https://colorlib.com/etc/regform/colorlib-regform-5/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
-     <link href="https://colorlib.com/etc/regform/colorlib-regform-5/css/main.css" rel="stylesheet" media="all">
 
 </head>
 
@@ -79,24 +72,29 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                       
-                          <a class="collapse-item" href="UpdatePackage.jsp">Update Package Details</a>
+                         <a class="collapse-item" href="UpdatePackage.jsp">Update Package Details</a>
                          <a class="collapse-item" href="UpdateBikeDetails">Update Bike Details</a>
                           <a class="collapse-item" href="Addbike.jsp">Add Bike Details</a>
                          <a class="collapse-item" href="Addpackage.jsp">Add Package Details</a>
                         <a class="collapse-item" href="cards.html">Delete Details</a>
-                      
                     </div>
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse"  aria-expanded="true" aria-controls="collapseTwo">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-motorcycle"></i>
                     <span>Vechile Details</span>
                 </a>
-               
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                      
+                        <a class="collapse-item" href="buttons.html">Normal Bikes</a>
+                        <a class="collapse-item" href="cards.html">Royal En Field</a>
+                    </div>
+                </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="packages.jsp">
+                <a class="nav-link" href="index.html">
                     <i class="far fa-address-book"></i>
                     <span>Our Tour Packages</span></a>
 
@@ -194,7 +192,9 @@
                     <span class="mr-2 d-none d-lg-inline text-gray-600 small">SignUp</span>
                     <i class="fas fa-user-plus"></i>
                     </a>
-                         </li>
+
+            </li>
+
 
                             <div class="topbar-divider d-none d-sm-block"></div>
 
@@ -227,41 +227,79 @@
                 </nav>
                 <!-- End of Topbar -->
 
-	
-	       <div class="wrapper wrapper--w790">
-        <div class="card card-5">
-            <div class="card-heading">
-                <h2 class="title">Apply Package Details</h2>
-            </div>
-            <div class="card-body">
-                  <form action="http://localhost:8080/tour/pvmstapi/pvmst" method="post">
-	
-	
-        <div class="form-group">
-        	<input type="text" class="form-control input-lg" name="package_id" placeholder="package id" required="required">
-        </div>
-        	<div class="form-group">
-        	<input type="text" class="form-control input-lg" name="package_name" placeholder="package name" required="required">
-        </div>
-		<div class="form-group">
-        	<input type="text" class="form-control input-lg" name="package_type" placeholder="package type" required="required">
-        </div>
-        <div class="form-group">
-        	<input type="text" class="form-control input-lg" name="package_amount" placeholder="package amount " required="required">
-        </div>
-		<div class="form-group">
-            <input type="text" class="form-control input-lg" name="package_desc" placeholder="package desc" required="required">
-        </div>
-		
-        <div class="form-group">
-          <input type="submit" value="Submit">
-        </div>
-    </form>
-    </div>
-    </div>
-    </div>
-    </div>
-           
+	<table class="table">
+		<thead class="thead-light">
+			
+		</thead>
+		<tbody>
+
+			<th scope="row">USER ID</th>
+			<th scope="row">USER NAME</th>
+			<th scope="row">USER ADDRESS</th>
+			<th scope="row">USER MOBILE</th>
+			<th scope="row">USER EMAIL</th>
+			
+
+
+<% 
+   			  	final String API_URL = "http://localhost:8080/tour/pvmstapi/pvmst";
+   			
+   				//Fetching data from API.
+   				try{
+					URL url = new URL(API_URL);
+					HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
+					httpURLConnection.setRequestMethod("GET");
+					httpURLConnection.setDoInput(true); //Downloads.
+					httpURLConnection.setDoOutput(false);//Uploads.
+					
+					InputStream inputStream = (InputStream)httpURLConnection.getInputStream();
+					InputStreamReader inputStreamReader = new InputStreamReader(inputStream, "utf-8");
+					BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+					
+					if(httpURLConnection.getResponseCode() == 200){
+						
+						//Reading the file line by line.
+						
+						String line = "";
+						StringBuilder sb = new StringBuilder();
+						
+						while((line = bufferedReader.readLine()) != null){
+							sb.append(line);
+						}
+						
+						String jsonString = sb.toString();
+						
+						JsonArray jsonArray = JsonParser.parseString(jsonString).getAsJsonArray();	
+						
+						for(int i =0; i < jsonArray.size(); i++){
+							JsonObject obj = jsonArray.get(i).getAsJsonObject();
+							
+							%>
+								<tr >
+									<td class="table-secondary"><% out.print(obj.get("user_id").getAsString()); %></td>
+									<td class="table-success"><% out.print(obj.get("user_name").getAsString()); %></td>
+									<td class="table-danger"><% out.print(obj.get("user_address").getAsString()); %></td>
+									<td class="table-warning"><% out.print(obj.get("user_mobile").getAsString()); %></td>
+									<td class="table-info"><% out.print(obj.get("user_email").getAsString()); %></td>
+									
+								
+								</tr>
+							<% 
+						}
+						
+					}
+   					
+   				}catch(Exception e){
+   					e.printStackTrace();
+   					
+   					out.print("Error : "+e.getMessage());
+   				}
+    			
+   			%>
+   		
+		</tbody>
+	</table>
+
                 <!-- Footer -->
 
                 <!-- End of Footer -->

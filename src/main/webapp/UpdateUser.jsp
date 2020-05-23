@@ -20,7 +20,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Add Package Details</title>
+    <title>Update User Details</title>
 
     <!-- Custom fonts for this template-->
     <link href="https://blackrockdigital.github.io/startbootstrap-sb-admin-2/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -78,8 +78,7 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                      
-                          <a class="collapse-item" href="UpdatePackage.jsp">Update Package Details</a>
+                         <a class="collapse-item" href="UpdatePackage.jsp">Update Package Details</a>
                          <a class="collapse-item" href="UpdateBikeDetails">Update Bike Details</a>
                           <a class="collapse-item" href="Addbike.jsp">Add Bike Details</a>
                          <a class="collapse-item" href="Addpackage.jsp">Add Package Details</a>
@@ -231,30 +230,33 @@
 	       <div class="wrapper wrapper--w790">
         <div class="card card-5">
             <div class="card-heading">
-                <h2 class="title">Apply Package Details</h2>
+                <h2 class="title">Update User Details</h2>
             </div>
             <div class="card-body">
-                  <form action="http://localhost:8080/tour/pvmstapi/pvmst" method="post">
+                <form action="http://localhost:8080/tour/pvmstapi/pvmst" method="post">
 	
 	
         <div class="form-group">
-        	<input type="text" class="form-control input-lg" name="package_id" placeholder="package id" required="required">
+        	<input type="text" class="form-control input-lg" name="user_id" placeholder="User ID" required="required">
         </div>
         	<div class="form-group">
-        	<input type="text" class="form-control input-lg" name="package_name" placeholder="package name" required="required">
+        	<input type="text" class="form-control input-lg" name="user_name" placeholder="User Name" required="required">
         </div>
 		<div class="form-group">
-        	<input type="text" class="form-control input-lg" name="package_type" placeholder="package type" required="required">
+        	<input type="text" class="form-control input-lg" name="user_address" placeholder="User Address" required="required">
         </div>
         <div class="form-group">
-        	<input type="text" class="form-control input-lg" name="package_amount" placeholder="package amount " required="required">
+        	<input type="text" class="form-control input-lg" name="user_mobile" placeholder="User mobile " required="required">
         </div>
 		<div class="form-group">
-            <input type="text" class="form-control input-lg" name="package_desc" placeholder="package desc" required="required">
+            <input type="text" class="form-control input-lg" name="user_email" placeholder="User Email" required="required">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control input-lg" name="password" placeholder="Password" required="required">
         </div>
 		
         <div class="form-group">
-          <input type="submit" value="Submit">
+          <input type="submit" value="Update User Details">
         </div>
     </form>
     </div>

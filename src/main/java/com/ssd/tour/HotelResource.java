@@ -62,8 +62,8 @@ public class HotelResource {
 
 	@POST
 	@Produces(MediaType.APPLICATION_JSON)
-	public void adduser(@FormParam("hotel_id") int id, @FormParam("hotel_name") String name,
-			@FormParam("hotel_address") String address, @FormParam("hotel_amount") Double amount)
+	public void adduser(@FormParam("hotel_id") int hotel_id, @FormParam("hotel_name") String hotel_name,
+			@FormParam("hotel_address") String hotel_address, @FormParam("hotel_amount") Double hotel_amount)
 			throws ClassNotFoundException, SQLException {
 
 		Hotel hotel = new Hotel();
