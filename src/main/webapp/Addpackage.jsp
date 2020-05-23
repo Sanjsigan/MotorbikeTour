@@ -234,59 +234,29 @@
                 <h2 class="title">Apply Package Details</h2>
             </div>
             <div class="card-body">
-                <form action="http://localhost:8080/tour/pvmstapi/pvmst" method="POST">
-                    <div class="form-row m-b-55">
-                        <div class="form-row">
-                            <div class="name">Enter Package ID:</div>
-                            <div class="value">
-                                <div class="input-group">
-                                    <input class="input--style-5" type="text" name="package_id">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="name">Package Name</div>
-                            <div class="value">
-                                <div class="input-group">
-                                    <input class="input--style-5" type="text" name="package_name">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="name">Package Type</div>
-                            <div class="value">
-                                <div class="input-group">
-                                    <input class="input--style-5" type="text" name="package_type">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="name">Package Amount</div>
-                            <div class="value">
-                                <div class="input-group">
-                                    <input class="input--style-5" type="text" name="package_amount">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="name">Package Desc</div>
-                            <div class="value">
-                                <div class="input-group">
-                                    <input class="input--style-5" type="text" name=package_desc>
-                                </div>
-                            </div>
-                        </div>
-                    
-
-                    </div>
-                       <div>
-            <button class="btn btn--radius-2 btn--red" type="submit">Add Package Details</button>
+                  <form action="http://localhost:8080/tour/pvmstapi/pvmst" method="post">
+	
+	
+        <div class="form-group">
+        	<input type="text" class="form-control input-lg" name="package_id" placeholder="package id" required="required">
         </div>
-            </div>
-          
+        	<div class="form-group">
+        	<input type="text" class="form-control input-lg" name="package_name" placeholder="package name" required="required">
         </div>
-       
-        </form>
+		<div class="form-group">
+        	<input type="text" class="form-control input-lg" name="package_type" placeholder="package type" required="required">
+        </div>
+        <div class="form-group">
+        	<input type="text" class="form-control input-lg" name="package_amount" placeholder="package amount " required="required">
+        </div>
+		<div class="form-group">
+            <input type="text" class="form-control input-lg" name="package_desc" placeholder="package desc" required="required">
+        </div>
+		
+        <div class="form-group">
+          <input type="submit" value="Submit">
+        </div>
+    </form>
     </div>
     </div>
     </div>

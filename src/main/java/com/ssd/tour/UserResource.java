@@ -16,7 +16,7 @@ import javax.ws.rs.core.Response;
 import com.google.gson.Gson;
 import com.ssd.tour.dao.UserDao;
 import com.ssd.tour.model.Users;
-
+@Path("user")
 public class UserResource {
 
 	@GET

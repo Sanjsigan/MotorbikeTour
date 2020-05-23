@@ -96,7 +96,7 @@ public class OurPackages {
 		packages.setDesc(package_desc);
 	
 		
-		//boolean result = CarDao.getInstance().add(car);
+
 	
 	}
 }
