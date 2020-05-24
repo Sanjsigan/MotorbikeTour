@@ -8,18 +8,21 @@ public class Booking {
 	private int package_id;
 	private int bike_id;
 	private int quantity;
+	private int addCard;
 
 	public Booking() {
 		super();
 	}
 
-	public Booking(int booking_id, String name, String mail, int package_id, int bike_id, int quantity) {
+	public Booking(int booking_id, String name, String mail, int package_id, int bike_id, int quantity, int addCard) {
 		super();
 		this.booking_id = booking_id;
 		this.name = name;
 		this.mail = mail;
 		this.package_id = package_id;
 		this.bike_id = bike_id;
+		this.quantity = quantity;
+		this.addCard = addCard;
 	}
 
 	public int getBooking_id() {
@@ -62,12 +65,20 @@ public class Booking {
 		this.bike_id = bike_id;
 	}
 
-	public int quantity() {
+	public int getQuantity() {
 		return quantity;
 	}
 
-	public void quantity(int quantity) {
+	public void setQuantity(int quantity) {
 		this.quantity = quantity;
+	}
+
+	public int getAddCard() {
+		return addCard;
+	}
+
+	public void setAddCard(int addCard) {
+		this.addCard = addCard;
 	}
 
 }
