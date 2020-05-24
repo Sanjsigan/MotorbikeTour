@@ -1,7 +1,9 @@
-package com.ssd.tour.model;
+package tour;
 
 import org.junit.Assert;
 import org.junit.Test;
+
+import com.ssd.tour.model.Packages;
 
 public class TestPackage {
 	
