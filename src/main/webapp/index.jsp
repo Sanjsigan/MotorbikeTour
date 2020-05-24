@@ -226,12 +226,12 @@
     <!-- Jumbotron Header -->
     <header class="jumbotron my-4">
       <h1 class="display-3">Welcome To PVMST Motour Tour Club..!!</h1>
-      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
+      <p class="lead">This is a Motorbike Tour Booking Web application.The user can see Bike, package, Hotel information and then He/she can book her/his  reservations.But user Bike, package, hotel information cannot be changed</p>
       <a href="signup.jsp" class="btn btn-primary">Join Here</a>
     </header>
 
     <!-- Page Features -->
-     <h3 class="display-3">OUR MEMBERS...</h3>
+     <h3 class="display-3">ADMINS..</h3>
     <div class="row text-center">
 
       <div class="col-lg-3 col-md-6 mb-4">
@@ -239,7 +239,7 @@
           <img class="card-img-top" src= "img/pethuru.jpg">
           <div class="card-body">
             <h4 class="card-title">Pethurushan</h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+
           </div>
           <div class="card-footer">
           
@@ -252,7 +252,7 @@
           <img class="card-img-top" src="img/vinthusha.jpg" alt="">
           <div class="card-body">
             <h4 class="card-title">Vinthusha</h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo magni sapiente, tempore debitis beatae culpa natus architecto.</p>
+          
           </div>
           <div class="card-footer">
 
@@ -265,7 +265,7 @@
           <img class="card-img-top" src="img/mathu.jpg" alt="">
           <div class="card-body">
             <h4 class="card-title">Mathunujan</h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+            
           </div>
           <div class="card-footer">
        
@@ -278,7 +278,7 @@
           <img class="card-img-top" src="img/sanjsi.jpg" alt="">
           <div class="card-body">
             <h4 class="card-title">Sanjsigan</h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo magni sapiente, tempore debitis beatae culpa natus architecto.</p>
+           
           </div>
           <div class="card-footer">
       
@@ -290,7 +290,7 @@
           <img class="card-img-top" src="" alt="">
           <div class="card-body">
             <h4 class="card-title">Thushi</h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+           
           </div>
           <div class="card-footer">
        
