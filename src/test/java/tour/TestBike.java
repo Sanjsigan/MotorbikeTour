@@ -1,6 +1,8 @@
-package com.ssd.tour.model;
+package tour;
 
 import org.junit.Test;
+
+import com.ssd.tour.model.Bike;
 
 import junit.framework.Assert;
 
