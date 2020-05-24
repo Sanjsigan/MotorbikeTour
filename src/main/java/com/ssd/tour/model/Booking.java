@@ -7,6 +7,7 @@ public class Booking {
 	private String mail;
 	private int package_id;
 	private int bike_id;
+	private int quantity;
 
 	public Booking() {
 		super();
