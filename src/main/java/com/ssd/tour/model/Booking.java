@@ -13,7 +13,7 @@ public class Booking {
 		super();
 	}
 
-	public Booking(int booking_id, String name, String mail, int package_id, int bike_id) {
+	public Booking(int booking_id, String name, String mail, int package_id, int bike_id, int quantity) {
 		super();
 		this.booking_id = booking_id;
 		this.name = name;
@@ -60,6 +60,14 @@ public class Booking {
 
 	public void setBike_id(int bike_id) {
 		this.bike_id = bike_id;
+	}
+
+	public int quantity() {
+		return quantity;
+	}
+
+	public void quantity(int quantity) {
+		this.quantity = quantity;
 	}
 
 }
