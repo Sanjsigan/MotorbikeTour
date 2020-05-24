@@ -77,7 +77,7 @@
                          <a class="collapse-item" href="UpdateBikeDetails">Update Bike Details</a>
                           <a class="collapse-item" href="Addbike.jsp">Add Bike Details</a>
                          <a class="collapse-item" href="Addpackage.jsp">Add Package Details</a>
-                        <a class="collapse-item" href="cards.html">Delete Details</a>
+                   
                     </div>
                 </div>
             </li>
