@@ -1,12 +1,15 @@
-package com.ssd.tour.model;
+package tour;
 
 import org.junit.Test;
 
+import com.ssd.tour.model.Users;
+
 import junit.framework.Assert;
 
+@SuppressWarnings("deprecation")
 public class UserTest {
 	
-	@SuppressWarnings("deprecation")
+	
 	@Test
 	
 	public void TestUser() {
