@@ -12,15 +12,15 @@ public class BookingTest {
 	@Test
 
 	public void TestBooking() {
-		
-		int id =230;
-	    String name ="user1";
-	    String mail ="user123@gmail.com";
-	    
-	    Booking booking = new Booking(id,name,mail,id,id, id);
-	    
-	    Assert.assertTrue(booking.getMail().equals(mail));
-	   Assert.assertTrue(booking.getName().equals(name));
+
+		int id = 230;
+		String name = "user1";
+		String mail = "user123@gmail.com";
+
+		Booking booking = new Booking(id, name, mail, id, id, id);
+
+		Assert.assertTrue(booking.getMail().equals(mail));
+		Assert.assertTrue(booking.getName().equals(name));
 	}
 
 }
