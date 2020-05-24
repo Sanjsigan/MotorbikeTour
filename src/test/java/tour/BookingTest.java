@@ -17,7 +17,7 @@ public class BookingTest {
 		String name = "user1";
 		String mail = "user123@gmail.com";
 
-		Booking booking = new Booking(id, name, mail, id, id, id);
+		Booking booking = new Booking(id, name, mail, id, id, id, id, id);
 
 		Assert.assertTrue(booking.getMail().equals(mail));
 		Assert.assertTrue(booking.getName().equals(name));
