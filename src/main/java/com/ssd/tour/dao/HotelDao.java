@@ -26,7 +26,7 @@ public class HotelDao {
 
 			Connection conn = Configs.getDbConnection();
 
-			String sql = "SELECT * FROM HotelDetails";// Query to be execute
+			String sql = "SELECT * FROM hotel";// Query to be execute
 			PreparedStatement preparedStatement = conn.prepareStatement(sql);
 
 			ResultSet resultSet = preparedStatement.executeQuery(); // Query execution.
@@ -93,7 +93,7 @@ public class HotelDao {
 		if (hotel != null) {
 
 			Connection connection = Configs.getDbConnection();
-			String sql = "INSERT INTO `HotelDetails` (`hotel_id`,`hotel_name`, `hotel_address`, `hotel_amount`) "
+			String sql = "INSERT INTO `hotel` (`hotel_id`,`hotel_name`, `hotel_address`, `hotel_amount`) "
 					+ "VALUES (?,?,?,?)";
 			PreparedStatement stmt = connection.prepareStatement(sql);
 			stmt.setInt(1, hotel.getId());
@@ -119,7 +119,7 @@ public class HotelDao {
 	public boolean updatHottle(Hotel hotel) throws ClassNotFoundException, SQLException {
 		if (hotel != null) {
 			Connection connection = Configs.getDbConnection();
-			String sql = "UPDATE Hotel SET hotel_name = ?, hotel_address = ?, hotel_amount = ?";
+			String sql = "UPDATE hotel SET hotel_name = ?, hotel_address = ?, hotel_amount = ?";
 			sql += " WHERE hotel_id = ?";
 
 			PreparedStatement stmt = connection.prepareStatement(sql);

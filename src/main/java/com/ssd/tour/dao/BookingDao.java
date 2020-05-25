@@ -116,7 +116,7 @@ public class BookingDao {
 				
 				Connection connection = Configs.getDbConnection();
 				String sql = "INSERT INTO `booking` (`booking_id`,`name`, `type`, `package_id`, `bike_id`,`quantity`,`days`,`card`) " + 
-							"VALUES (?,?,?,?,?)";
+							"VALUES (?,?,?,?,?,?,?,?)";
 				PreparedStatement stmt = connection.prepareStatement(sql);
 				stmt.setInt(1, booking.getBooking_id());
 				stmt.setString(2, booking.getName());
@@ -125,7 +125,7 @@ public class BookingDao {
 				stmt.setInt(5, booking.getBike_id());
 				stmt.setInt(6, booking.getQuantity());
 				stmt.setInt(7, booking.getDays());
-				stmt.setInt(7, booking.getAddCard());
+				stmt.setInt(8, booking.getAddCard());
 			
 				
 				int count = stmt.executeUpdate();
