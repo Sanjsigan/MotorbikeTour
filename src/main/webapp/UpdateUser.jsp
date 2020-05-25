@@ -87,12 +87,11 @@
                     </div>
                 </div>
             </li>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse"  aria-expanded="true" aria-controls="collapseTwo">
+             <li class="nav-item">
+                <a class="nav-link" href="BikeDetails.jsp">
                     <i class="fas fa-motorcycle"></i>
-                    <span>Vechile Details</span>
-                </a>
-               
+                    <span>Bike Details</span></a>
+
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="packages.jsp">
@@ -101,14 +100,14 @@
 
             </li>
                <li class="nav-item">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="Hottle.jsp">
                     <i class="far fa-address-book"></i>
                     <span>Hottles Details</span></a>
 
             </li>
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="Booking.jsp">
                     <i class="far fa-address-book"></i>
                     <span>Booking Here</span></a>
 

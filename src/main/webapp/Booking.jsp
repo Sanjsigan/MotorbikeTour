@@ -81,16 +81,15 @@
                          <a class="collapse-item" href="UpdateBikeDetails">Update Bike Details</a>
                           <a class="collapse-item" href="Addbike.jsp">Add Bike Details</a>
                          <a class="collapse-item" href="Addpackage.jsp">Add Package Details</a>
-                        <a class="collapse-item" href="cards.html">Delete Details</a>
+                   
                     </div>
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse"  aria-expanded="true" aria-controls="collapseTwo">
+                <a class="nav-link" href="BikeDetails.jsp">
                     <i class="fas fa-motorcycle"></i>
-                    <span>Vechile Details</span>
-                </a>
-                
+                    <span>Bike Details</span></a>
+
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="packages.jsp">
@@ -99,14 +98,14 @@
 
             </li>
                <li class="nav-item">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="Hottle.jsp">
                     <i class="far fa-address-book"></i>
                     <span>Hottles Details</span></a>
 
             </li>
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="Booking.jsp">
                     <i class="far fa-address-book"></i>
                     <span>Booking Here</span></a>
 
