@@ -33,7 +33,7 @@ public class BookingDao {
 				
 				Connection conn = Configs.getDbConnection();
 				
-				String sql = "SELECT * FROM booking";//Query to be execute
+				String sql = "SELECT * FROM pvmst_booking";//Query to be execute
 				PreparedStatement preparedStatement = conn.prepareStatement(sql);
 				
 				ResultSet resultSet = preparedStatement.executeQuery(); //Query execution.
@@ -46,6 +46,9 @@ public class BookingDao {
 					booking.setMail(resultSet.getString("mail"));
 					booking.setPackage_id(resultSet.getInt("package_id"));
 					booking.setBike_id(resultSet.getInt("bike_id"));
+					booking.setQuantity(resultSet.getInt("quantity"));
+					booking.setDays(resultSet.getInt("days"));
+					booking.setAddCard(resultSet.getInt("card"));
 					
 					
 					
@@ -76,7 +79,7 @@ public class BookingDao {
 				
 				Connection conn = Configs.getDbConnection();
 				
-				String sql = "SELECT * FROM booking WHERE booking_id = ?";//Query to be execute
+				String sql = "SELECT * FROM pvmst_booking WHERE booking_id = ?";//Query to be execute
 				PreparedStatement preparedStatement = conn.prepareStatement(sql);
 				preparedStatement.setInt(1, package_id); //binding the parameter value, 1 is for specify first parameter.
 				
@@ -89,6 +92,9 @@ public class BookingDao {
 					booking.setMail(resultSet.getString("mail"));
 					booking.setPackage_id(resultSet.getInt("package_id"));
 					booking.setBike_id(resultSet.getInt("bike_id"));
+					booking.setQuantity(resultSet.getInt("quantity"));
+					booking.setDays(resultSet.getInt("days"));
+					booking.setAddCard(resultSet.getInt("card"));
 					
 					
 					
@@ -109,7 +115,7 @@ public class BookingDao {
 			if(booking != null) {
 				
 				Connection connection = Configs.getDbConnection();
-				String sql = "INSERT INTO `booking` (`booking_id`,`name`, `type`, `package_id`, `bike_id`) " + 
+				String sql = "INSERT INTO `booking` (`booking_id`,`name`, `type`, `package_id`, `bike_id`,`quantity`,`days`,`card`) " + 
 							"VALUES (?,?,?,?,?)";
 				PreparedStatement stmt = connection.prepareStatement(sql);
 				stmt.setInt(1, booking.getBooking_id());
@@ -117,6 +123,9 @@ public class BookingDao {
 				stmt.setString(3, booking.getMail());
 				stmt.setInt(4, booking.getPackage_id());
 				stmt.setInt(5, booking.getBike_id());
+				stmt.setInt(6, booking.getQuantity());
+				stmt.setInt(7, booking.getDays());
+				stmt.setInt(7, booking.getAddCard());
 			
 				
 				int count = stmt.executeUpdate();

@@ -26,7 +26,7 @@ public class BikeDao {
 
 			Connection conn = Configs.getDbConnection();
 
-			String sql = "SELECT * FROM BikeDetails";// Query to be execute
+			String sql = "SELECT * FROM bike";// Query to be execute
 			PreparedStatement preparedStatement = conn.prepareStatement(sql);
 
 			ResultSet resultSet = preparedStatement.executeQuery(); // Query execution.
@@ -36,7 +36,7 @@ public class BikeDao {
 
 				bike.setId(resultSet.getInt("bike_id"));
 				bike.setModel(resultSet.getString("bike_model"));
-				bike.setMaximumHorse(resultSet.getString("bike_horse"));
+				bike.setMaximumHorse(resultSet.getString("maximumhorse"));
 				bike.setAmount(resultSet.getDouble("bike_amount"));
 
 				bikeList.add(bike);
@@ -74,7 +74,7 @@ public class BikeDao {
 
 				bike.setId(resultSet.getInt("bike_id"));
 				bike.setModel(resultSet.getString("bike_model"));
-				bike.setMaximumHorse(resultSet.getString("bike_horse"));
+				bike.setMaximumHorse(resultSet.getString("maximumhorse"));
 				bike.setAmount(resultSet.getDouble("bike_amount"));
 
 			}
@@ -93,7 +93,7 @@ public class BikeDao {
 		if (bike != null) {
 
 			Connection connection = Configs.getDbConnection();
-			String sql = "INSERT INTO `BikeDetails` (`bike_id`,`bike_model`, `bike_horse`, `bike_amount`) "
+			String sql = "INSERT INTO `bike` (`bike_id`,`bike_model`, `maximumhorse`, `bike_amount`) "
 					+ "VALUES (?,?,?,?)";
 			PreparedStatement stmt = connection.prepareStatement(sql);
 			stmt.setInt(1, bike.getId());
@@ -118,7 +118,7 @@ public class BikeDao {
 	public boolean updateBike(Bike bike) throws ClassNotFoundException, SQLException {
 		if (bike != null) {
 			Connection connection = Configs.getDbConnection();
-			String sql = "UPDATE book SET bike_name = ?, bike_model = ?, bike_horse = ?, bike_amount=?";
+			String sql = "UPDATE book SET bike_name = ?, bike_model = ?, maximumhorse = ?, bike_amount=?";
 			sql += " WHERE bike_id = ?";
 
 			PreparedStatement stmt = connection.prepareStatement(sql);
