@@ -45,7 +45,7 @@ public class UserDao {
 				user.setAddress(resultSet.getString("user_address"));
 				user.setMobile(resultSet.getInt("user_mobile"));
 				user.setMail(resultSet.getString("user_email"));
-				user.setPasword(resultSet.getString("password"));
+				user.setPassword(resultSet.getString("password"));
 
 				carList.add(user);
 			}
@@ -86,7 +86,7 @@ public class UserDao {
 				user.setAddress(resultSet.getString("user_address"));
 				user.setMobile(resultSet.getInt("user_mobile"));
 				user.setMail(resultSet.getString("user_email"));
-				user.setPasword(resultSet.getString("password"));
+				user.setPassword(resultSet.getString("password"));
 
 			}
 

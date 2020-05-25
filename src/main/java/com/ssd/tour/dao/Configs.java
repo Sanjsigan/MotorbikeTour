@@ -8,7 +8,7 @@ public class Configs {
 	
 public static Connection getDbConnection() throws ClassNotFoundException, SQLException {
 		
-		String connURL = "jdbc:mysql://localhost:3306/pvmst";
+		String connURL = "jdbc:mysql://localhost:3306/pvmstbooking";
 		
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		Connection conn = DriverManager.getConnection(connURL, "root", "sanjsi");
