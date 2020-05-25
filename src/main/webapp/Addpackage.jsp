@@ -1,14 +1,7 @@
 
 
-<%@page import="com.google.gson.JsonObject"%>
-<%@page import="com.google.gson.JsonParser"%>
-<%@page import="com.google.gson.JsonArray"%>
-<%@page import="com.google.gson.Gson"%>
-<%@page import="java.io.BufferedReader"%>
-<%@page import="java.io.InputStreamReader"%>
-<%@page import="java.io.InputStream"%>
-<%@page import="java.net.HttpURLConnection"%>
-<%@page import="java.net.URL"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -233,23 +226,23 @@
                 <h2 class="title">Apply Package Details</h2>
             </div>
             <div class="card-body">
-                  <form action="http://localhost:8080/tour/pvmstapi/pvmst" method="post">
+                  <form action="http://localhost:8080/tour/pvmstapi/pvmst/addpac" method="post">
 	
 	
         <div class="form-group">
-        	<input type="text" class="form-control input-lg" name="package_id" placeholder="package id" required="required">
+        	<input type="text" class="form-control input-lg" name="id" placeholder="package id" required="required">
         </div>
         	<div class="form-group">
-        	<input type="text" class="form-control input-lg" name="package_name" placeholder="package name" required="required">
+        	<input type="text" class="form-control input-lg" name="PacName" placeholder="package name" required="required">
         </div>
 		<div class="form-group">
-        	<input type="text" class="form-control input-lg" name="package_type" placeholder="package type" required="required">
+        	<input type="text" class="form-control input-lg" name="type" placeholder="package type" required="required">
         </div>
         <div class="form-group">
-        	<input type="text" class="form-control input-lg" name="package_amount" placeholder="package amount " required="required">
+        	<input type="text" class="form-control input-lg" name="amount" placeholder="package amount " required="required">
         </div>
 		<div class="form-group">
-            <input type="text" class="form-control input-lg" name="package_desc" placeholder="package desc" required="required">
+            <input type="text" class="form-control input-lg" name="desc" placeholder="package desc" required="required">
         </div>
 		
         <div class="form-group">
@@ -283,7 +276,7 @@
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
                         <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
+            <span aria-hidden="true">Ã—</span>
           </button>
                     </div>
                     <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>

@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import javax.ws.rs.Consumes;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -78,22 +79,24 @@ public class OurPackages {
 	}
 	
 	@POST
+	@Path("addpac")
 	@Produces(MediaType.APPLICATION_JSON)
-	public void addPackage(@FormParam("package_id") int package_id,
-							@FormParam("package_name") String package_name,
-							@FormParam("package_type") String package_type,
-							@FormParam("package_amount") int package_amount,
-							@FormParam("package_desc") String package_desc
+	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+	public void addPackage(@FormParam("package_id") int id,
+							@FormParam("package_name") String PacName,
+							@FormParam("package_type") String type,
+							@FormParam("package_amount") int amount,
+							@FormParam("package_desc") String desc
 						)
 									throws ClassNotFoundException, SQLException {
 		
 		Packages packages= new Packages();
 		
-		packages.setId(package_id);
-		packages.setPacName(package_name);
-		packages.setType(package_type);
-		packages.setAmount(package_amount);
-		packages.setDesc(package_desc);
+		packages.setId(id);
+		packages.setPacName(PacName);
+		packages.setType(type);
+		packages.setAmount(amount);
+		packages.setDesc(desc);
 	
 		
 

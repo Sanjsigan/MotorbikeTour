@@ -220,19 +220,19 @@
 
 	<table class="table">
 		<thead class="thead-light">
-			
-		</thead>
-		<tbody>
-
+			<tr>
 			<th scope="row">BIKE ID</th>
 			<th scope="row">BIKE MODEL</th>
 			<th scope="row">BIKE HORSE</th>
 			<th scope="row">BIKE AMOUNT</th>
 			
+</tr>
+		</thead>
+		<tbody>
 
 
 <% 
-   			  	final String API_URL = "http://localhost:8080/tour/pvmstapi/pvmst";
+   			  	final String API_URL = "http://localhost:8080/tour/pvmstapi/bike";
    			
    				//Fetching data from API.
    				try{
@@ -266,10 +266,10 @@
 							
 							%>
 								<tr >
-									<td class="table-secondary"><% out.print(obj.get("bike_id").getAsString()); %></td>
-									<td class="table-success"><% out.print(obj.get("bike_name").getAsString()); %></td>
-									<td class="table-danger"><% out.print(obj.get("bike_horse").getAsString()); %></td>
-									<td class="table-warning"><% out.print(obj.get("bike_amount").getAsString()); %></td>
+									<td class="table-secondary"><% out.print(obj.get("id").getAsString()); %></td>
+									<td class="table-success"><% out.print(obj.get("model").getAsString()); %></td>
+									<td class="table-danger"><% out.print(obj.get("maximumHorse").getAsString()); %></td>
+									<td class="table-warning"><% out.print(obj.get("amount").getAsString()); %></td>
 									
 								</tr>
 							<% 

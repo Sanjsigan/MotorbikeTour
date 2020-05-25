@@ -16,7 +16,7 @@ import javax.ws.rs.core.Response;
 import com.google.gson.Gson;
 import com.ssd.tour.dao.BikeDao;
 import com.ssd.tour.model.Bike;
-
+@Path("bike")
 public class BikeResource {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)

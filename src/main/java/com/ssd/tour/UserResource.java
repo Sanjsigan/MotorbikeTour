@@ -28,7 +28,7 @@ public class UserResource {
 
 		Gson gson = new Gson();
 
-		if (object instanceof List<?>) { // Data type checking.
+		if (object instanceof List<?>) { 
 
 			@SuppressWarnings("unchecked")
 			List<Users> cars = (List<Users>) object; // Casting.
@@ -77,7 +77,7 @@ public class UserResource {
 		user.setMail(email);
 		user.setMail(password);
 
-		// boolean result = CarDao.getInstance().add(car);
+	
 
 	}
 

@@ -16,13 +16,12 @@ import javax.ws.rs.core.Response;
 import com.google.gson.Gson;
 import com.ssd.tour.dao.HotelDao;
 import com.ssd.tour.model.Hotel;
-
+@Path("one")
 public class HotelResource {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getAll() {
-		// Jackson
-		// GSON
+	
 		Object object = HotelDao.getInstance().getAll();
 
 		Gson gson = new Gson();

@@ -221,19 +221,19 @@
 
 	<table class="table">
 		<thead class="thead-light">
-			
-		</thead>
-		<tbody>
-
+			<tr>
 			<th scope="row">HOTTLE ID</th>
 			<th scope="row">HOTTLE NAME</th>
 			<th scope="row">HOTTLE ADDRESS</th>
 			<th scope="row">HOTTLE AMOUNT</th>
-			
+		</tr>	
+		</thead>
+		<tbody>
+
 
 
 <% 
-   			  	final String API_URL = "http://localhost:8080/tour/pvmstapi/pvmst";
+   			  	final String API_URL = "http://localhost:8080/tour/pvmstapi/one";
    			
    				//Fetching data from API.
    				try{
@@ -267,10 +267,10 @@
 							
 							%>
 								<tr >
-									<td class="table-secondary"><% out.print(obj.get("hotel_id").getAsString()); %></td>
-									<td class="table-success"><% out.print(obj.get("hotel_name").getAsString()); %></td>
-									<td class="table-danger"><% out.print(obj.get("hotel_address").getAsString()); %></td>
-									<td class="table-warning"><% out.print(obj.get("hotel_amount").getAsString()); %></td>
+									<td class="table-secondary"><% out.print(obj.get("id").getAsString()); %></td>
+									<td class="table-success"><% out.print(obj.get("name").getAsString()); %></td>
+									<td class="table-danger"><% out.print(obj.get("address").getAsString()); %></td>
+									<td class="table-warning"><% out.print(obj.get("amount").getAsString()); %></td>
 									
 								</tr>
 							<% 

@@ -222,20 +222,20 @@
 
 	<table class="table">
 		<thead class="thead-light">
-			
-		</thead>
-		<tbody>
-
+			<tr>
 			<th scope="row">USER ID</th>
 			<th scope="row">USER NAME</th>
 			<th scope="row">USER ADDRESS</th>
 			<th scope="row">USER MOBILE</th>
 			<th scope="row">USER EMAIL</th>
 			
+</tr>
+		</thead>
+		<tbody>
 
 
 <% 
-   			  	final String API_URL = "http://localhost:8080/tour/pvmstapi/pvmst";
+   			  	final String API_URL = "http://localhost:8080/tour/pvmstapi/user";
    			
    				//Fetching data from API.
    				try{
@@ -269,11 +269,11 @@
 							
 							%>
 								<tr >
-									<td class="table-secondary"><% out.print(obj.get("user_id").getAsString()); %></td>
-									<td class="table-success"><% out.print(obj.get("user_name").getAsString()); %></td>
-									<td class="table-danger"><% out.print(obj.get("user_address").getAsString()); %></td>
-									<td class="table-warning"><% out.print(obj.get("user_mobile").getAsString()); %></td>
-									<td class="table-info"><% out.print(obj.get("user_email").getAsString()); %></td>
+									<td class="table-secondary"><% out.print(obj.get("id").getAsString()); %></td>
+									<td class="table-success"><% out.print(obj.get("name").getAsString()); %></td>
+									<td class="table-danger"><% out.print(obj.get("address").getAsString()); %></td>
+									<td class="table-warning"><% out.print(obj.get("mobile").getAsString()); %></td>
+									<td class="table-info"><% out.print(obj.get("mail").getAsString()); %></td>
 									
 								
 								</tr>
