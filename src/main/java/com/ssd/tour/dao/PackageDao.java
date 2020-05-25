@@ -47,6 +47,7 @@ public class PackageDao {
 
 				pacList.add(packages);
 			}
+			System.out.println("REach success : "+pacList.size());
 
 		} catch (Exception e) {
 			e.printStackTrace();

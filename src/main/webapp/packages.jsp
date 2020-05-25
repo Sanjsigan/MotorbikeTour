@@ -222,15 +222,15 @@
 
 	<table class="table">
 		<thead class="thead-light">
-			
-		</thead>
-		<tbody>
-
+			<tr>
 			<th scope="row">ID</th>
 			<th scope="row">Name</th>
 			<th scope="row">Type</th>
 			<th scope="row">Amount</th>
 			<th scope="row">Desc</th>
+</tr>
+		</thead>
+		<tbody>
 
 
 <% 
@@ -248,6 +248,8 @@
 					InputStreamReader inputStreamReader = new InputStreamReader(inputStream, "utf-8");
 					BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
 					
+					System.out.println("We are here 01");
+					
 					if(httpURLConnection.getResponseCode() == 200){
 						
 						//Reading the file line by line.
@@ -261,6 +263,9 @@
 						
 						String jsonString = sb.toString();
 						
+						System.out.println("We are here 02 "+jsonString);
+
+						
 						JsonArray jsonArray = JsonParser.parseString(jsonString).getAsJsonArray();	
 						
 						for(int i =0; i < jsonArray.size(); i++){
@@ -268,11 +273,11 @@
 							
 							%>
 								<tr >
-									<td class="table-secondary"><% out.print(obj.get("package_id").getAsString()); %></td>
-									<td class="table-success"><% out.print(obj.get("package_name").getAsString()); %></td>
-									<td class="table-danger"><% out.print(obj.get("package_type").getAsString()); %></td>
-									<td class="table-warning"><% out.print(obj.get("package_amount").getAsString()); %></td>
-									<td class="table-info"><% out.print(obj.get("package_desc").getAsString()); %></td>
+									<td class="table-secondary"><% out.print(obj.get("id").getAsString()); %></td>
+									<td class="table-success"><% out.print(obj.get("PacName").getAsString()); %></td>
+									<td class="table-danger"><% out.print(obj.get("type").getAsString()); %></td>
+									<td class="table-warning"><% out.print(obj.get("amount").getAsString()); %></td>
+									<td class="table-info"><% out.print(obj.get("desc").getAsString()); %></td>
 								
 								</tr>
 							<% 
