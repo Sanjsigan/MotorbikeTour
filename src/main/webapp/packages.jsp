@@ -234,7 +234,7 @@
 
 
 <% 
-   			  	final String API_URL = "https://pvmsttour.herokuapp.com/:8080/tour/pvmstapi/pvmst";
+   			  	final String API_URL = "https://pvmsttour.herokuapp.com/tour/pvmstapi/pvmst";
    			
    				//Fetching data from API.
    				try{
