@@ -226,7 +226,7 @@
                 <h2 class="title">Apply Package Details</h2>
             </div>
             <div class="card-body">
-                  <form action="http://localhost:8080/tour/pvmstapi/pvmst/addpac" method="post">
+                  <form action="http://localhost:8080/tour/pvmstapi/pvmst" method="post">
 	
 	
         <div class="form-group">

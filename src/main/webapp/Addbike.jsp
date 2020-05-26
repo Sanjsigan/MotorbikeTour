@@ -233,7 +233,7 @@
                 <h2 class="title">Apply Bike Details</h2>
             </div>
             <div class="card-body">
-               <form action="http://localhost:8080/tour/pvmstapi/pvmst" method="post">
+               <form action="http://localhost:8080/tour/pvmstapi/bike" method="post">
 	
 	
         <div class="form-group">

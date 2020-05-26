@@ -79,10 +79,10 @@ public class OurPackages {
 	}
 	
 	@POST
-	@Path("addpac")
+
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-	public void addPackage(@FormParam("package_id") int id,
+	public void add(@FormParam("package_id") int id,
 							@FormParam("package_name") String PacName,
 							@FormParam("package_type") String type,
 							@FormParam("package_amount") int amount,
@@ -98,7 +98,7 @@ public class OurPackages {
 		packages.setAmount(amount);
 		packages.setDesc(desc);
 	
-		
+
 
 	
 	}

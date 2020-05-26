@@ -96,7 +96,7 @@ public class PackageDao {
 
 	}
 
-	public boolean add(Packages packages) throws ClassNotFoundException, SQLException {
+	public boolean addPackage(Packages packages) throws ClassNotFoundException, SQLException {
 
 		if (packages != null) {
 
