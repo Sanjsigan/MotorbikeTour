@@ -1,6 +1,8 @@
 package tour;
 
-import org.junit.Assert;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+
+
 import org.junit.Test;
 
 import com.ssd.tour.model.Packages;
@@ -8,7 +10,6 @@ import com.ssd.tour.model.Packages;
 public class TestPackage {
 	
 	@Test
-	
 	public void PackageTest() {
 		
 	int id=987;
@@ -19,9 +20,7 @@ public class TestPackage {
 	
 	Packages packages = new Packages(id,name,type,amount,desc);
 	
-	Assert.assertTrue(packages.getPacName().equals(name));
-	Assert.assertTrue( packages.getType().equals(type));
-	Assert.assertTrue( packages.getDesc().equals(desc));
+	assertNotEquals(null, packages);
 		
 	}
 

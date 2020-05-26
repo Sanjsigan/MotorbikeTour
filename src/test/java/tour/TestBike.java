@@ -1,12 +1,14 @@
 package tour;
 
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+
 import org.junit.Test;
 
 import com.ssd.tour.model.Bike;
 
-import junit.framework.Assert;
 
-@SuppressWarnings("deprecation")
+
+
 public class TestBike {
 
 	@Test
@@ -17,7 +19,7 @@ public class TestBike {
 
 		Bike bike = new Bike(id, model, Horse, id);
 
-		Assert.assertTrue(bike.getModel().equals(model));
+		assertNotEquals(null, bike);
 
 	}
 
