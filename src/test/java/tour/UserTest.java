@@ -16,7 +16,7 @@ public class UserTest {
 		int mobile = 0765432134;
 		String password = "sdf@#$5ss";
 
-		Users user = new Users(id, name, address, mobile, password, password);
+		Users user = new Users(id, name, address, mobile, password, password, null);
 
 		assertNotEquals(null, user);
 

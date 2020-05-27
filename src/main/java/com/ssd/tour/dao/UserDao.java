@@ -24,6 +24,37 @@ public class UserDao {
 
 	}
 
+	public Users LoginChecker(String email, String password) {
+		Users user = new Users();
+		
+		try {
+			
+			Connection connection = Configs.getDbConnection();
+			String sql = "SELECT * FROM signup WHERE user_email=? AND password=?";
+			PreparedStatement stmt = connection.prepareStatement(sql);
+			stmt.setString(1, email);
+			stmt.setString(2, password);
+			
+			ResultSet rs = stmt.executeQuery();
+			while(rs.next()) {
+				user = new Users();
+				user.setId(rs.getInt("id"));
+				user.setMail(rs.getString("email"));
+				user.setPassword(rs.getString("password"));
+				user.setName(rs.getString("username"));
+				user.setRole(USER_ROLES.valueOf(rs.getString("role")));
+			}
+ 			connection.close();
+ 			
+ 			return user;
+			
+		} catch (Exception e) {
+			 e.printStackTrace();
+		}
+		
+		return user;
+	}
+
 	// Fetching data from database.
 	public Object getAll() {
 		List<Users> carList = new ArrayList<Users>();
